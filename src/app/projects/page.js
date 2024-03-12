@@ -24,7 +24,7 @@ export default function Home() {
             src="/images/sticky.png"
           />
         </div>
-        <Link href="/addproj">
+        <Link href="/curntproj">
           <div className="w-48 h-[184px] left-[16px] top-[20px] absolute text-black text-sm font-normal font-['Gentium Book Basic']">
             _______
           </div>
