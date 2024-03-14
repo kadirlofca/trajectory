@@ -1,14 +1,18 @@
 import Link from 'next/link';
 import StickyNote from './components/StickyNote';
+import PocketBase from 'pocketbase'
 
+export default async function Home() {
 
-export default function Home() {
+  const pb = new PocketBase('http://127.0.0.1:8090');
+  const projects = (await pb.collection('projects').getFullList()).map((project) =>
+    <StickyNote name={"My Project"} />
+  );
+
   return (
     <div className="w-full h-full">
       <div className='flex flex-wrap mx-auto max-w-screen-lg'>
-        <StickyNote name={"My Project"} />
-        <StickyNote name={"Your Project"} />
-        <StickyNote name={"Their Project"} />
+        {projects}
       </div>
 
     </div>
