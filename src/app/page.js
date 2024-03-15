@@ -13,10 +13,25 @@ export default async function Projects() {
   );
 
   return (
-    <div className="w-full h-full">
-      <div className='flex flex-wrap justify-center mx-auto max-w-screen-lg'>
-        {projects}
+    <div>
+      <div className='flex flex-wrap justify-center gap-12 max-w-screen-lg mx-auto mb-4 py-4 pl-8 border-b-2 border-gray-400'>
+        <div className='max-w-[29%]'>
+          Trajectory heps you organize and keep track of your car projects.
+        </div>
+        <div className='max-w-[29%]'>
+          JavaScript - React - Nextjs - Tauri - HTML & CSS - Tailwind
+        </div>
+        <div className='max-w-[29%]'>
+          Kadir Lofca - Kennedy Ninh - Hayden Perusek
+        </div>
       </div>
-    </div >
+
+      <div className="w-full h-full">
+        <div className='flex flex-wrap justify-center mx-auto max-w-screen-lg'>
+          <StickyNote projectData={{ name: "asd", budget: "234" }}></StickyNote>
+          {projects}
+        </div>
+      </div >
+    </div>
   );
 }
