@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { TextareaWithButton } from "@/app/components/TextArea"
 import {
   Select,
   SelectContent,
@@ -34,8 +35,8 @@ export function CardWithForm_HowTo() {
               <Input id="name" placeholder="Name of your project" />
             </div>
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="link">Link</Label>
-              <Input id="content" placeholder="Link to How-To" />
+              <Label htmlFor="link">Notes and/or Links</Label>
+              <TextareaWithButton id="how-to-input" />
             </div>
           </div>
         </form>
