@@ -1,35 +1,76 @@
+"use client";
 import Link from "next/link";
+
+import {
+  ComboboxDropdownMenu,
+  ComboboxDropdownMenu_Category,
+} from "../components/Category";
+import { ComboBoxResponsive } from "../components/DropDown";
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu";
+
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Button } from "@/components/ui/button";
+import { CollapsibleDemo } from "../components/Collapse";
 
 export default function AddCategory() {
   return (
-    <div className="w-[1440px] h-[1879px] relative bg-white">
-      <div className="w-[1440px] h-[125px] left-0 top-0 absolute bg-black bg-opacity-70" />
-      <div className="w-[445px] h-[60px] left-[421px] top-[31px] absolute bg-yellow-400 rounded-[10px]" />
-      <div className="left-[515px] top-[48px] absolute text-black text-2xl font-normal font-['Gentium Book Basic']">
-        Current Project: -----
+    <>
+      <div>
+        <div className="flex flex-wrap justify-center gap-12 max-w-screen-lg mx-auto mb-4 py-4 pl-8 border-b-2 border-gray-400 bg-gray-400">
+          <div className="max-w-[29%]">
+            <Link href="/">
+              Trajectory heps you organize and keep track of your car projects.
+            </Link>
+          </div>
+
+          <div className="max-w-[29%]">
+            JavaScript - React - Nextjs - Tauri - HTML & CSS - Tailwind
+          </div>
+          <div className="max-w-[29%]">
+            Kadir Lofca - Kennedy Ninh - Hayden Perusek
+          </div>
+        </div>
       </div>
-      <div className="w-[673px] h-[270px] left-[261px] top-[275px] absolute bg-zinc-100 bg-opacity-95 rounded-[10px] shadow border-2 border-black" />
-      <div className="w-[627px] h-[50px] left-[286px] top-[292px] absolute bg-zinc-300 rounded-[10px]" />
-      <div className="left-[305px] top-[303px] absolute text-stone-500 text-2xl font-normal font-['Gentium Book Basic']">
-        Search Categories
+      <div className="flex flex-wrap justify-left mx-auto max-w-screen-lg">
+        <ContextMenu>
+          <ContextMenuTrigger>
+            <Button>Right Click Here!</Button>
+          </ContextMenuTrigger>
+          <ContextMenuContent>
+            <ComboBoxResponsive />
+          </ContextMenuContent>
+        </ContextMenu>
       </div>
-      <div className="w-[619px] h-[510px] left-[288px] top-[361px] absolute text-black text-2xl font-normal font-['Gentium Book Basic']">
-        <Link href="/newcateg">------</Link>
-        <br />
-        ------
-        <br />
-        -------
-        <br />
-        -------
-        <br />
-        --------
-        <br />
-        -------
+
+      <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
+      <ComboboxDropdownMenu_Category />
+       <Link href="/addpart"> <Button>Part Page</Button></Link>
       </div>
-      <div className="w-[1051px] h-[50px] left-[60px] top-[216px] absolute bg-stone-200 border-2 border-black" />
-      <div className="left-[73px] top-[229px] absolute text-black text-[22px] font-normal font-['Gentium Book Basic']">
-        + Add Category
+
+      <div className="flex flex-wrap pt-5 justify-right mx-auto max-w-screen-lg">
+          <CollapsibleDemo />
+        
       </div>
-    </div>
+    </>
   );
 }

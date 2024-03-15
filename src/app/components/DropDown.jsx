@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useMediaQuery } from "@/hook/use-media-query"
 import { Button } from "@/components/ui/button"
 import {
     Command,
@@ -28,32 +29,40 @@ const Status = {
 
 const statuses = [
     {
-        value: "backlog",
-        label: "Backlog",
+        value: "----",
+        label: "----",
     },
     {
-        value: "todo",
-        label: "Todo",
+        value: "----",
+        label: "----",
     },
     {
-        value: "in progress",
-        label: "In Progress",
-    },
-    {
-        value: "done",
-        label: "Done",
-    },
-    {
-        value: "canceled",
-        label: "Canceled",
-    },
+        value: "----",
+        label: "----",
+    }
 ]
 
 export function ComboBoxResponsive() {
     const [open, setOpen] = React.useState(false)
+    const isDesktop = useMediaQuery("(min-width: 768px)")
     const [selectedStatus, setSelectedStatus] = React.useState(
         null
     )
+
+    if (isDesktop) {
+        return (
+          <Popover open={open} onOpenChange={setOpen}>
+            <PopoverTrigger asChild>
+              <Button variant="outline" className="w-[150px] justify-start">
+                {selectedStatus ? <>{selectedStatus.label}</> : <>+ Add Category</>}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent className="w-[200px] p-0" align="start">
+              <StatusList setOpen={setOpen} setSelectedStatus={setSelectedStatus} />
+            </PopoverContent>
+          </Popover>
+        )
+      }
 
     return (
         <Drawer open={open} onOpenChange={setOpen}>
@@ -73,26 +82,27 @@ export function ComboBoxResponsive() {
 
 function StatusList({ setOpen, setSelectedStatus }) {
     return (
-        <Command>
-            <CommandInput placeholder="Search Categories..." />
-            <CommandList>
-                <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup>
-                    {statuses.map((status) => (
-                        <CommandItem
-                        key={status.value}
-                        value={status.value}
-                        onSelect={() => {
-                          setSelectedStatus(status);
-                          setOpen(false);
-                        }}
-                      >
-                        {status.label}
-                      </CommandItem>
-                      
-                    ))}
-                </CommandGroup>
-            </CommandList>
-        </Command>
-    )
-}
+      <Command>
+        <CommandInput placeholder="Search Categories" />
+        <CommandList>
+          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandGroup>
+            {statuses.map((status) => (
+              <CommandItem
+                key={status.value}
+                value={status.value}
+                onSelect={(value) => {
+                  setSelectedStatus(
+                    statuses.find((priority) => priority.value === value) || null
+                  );
+                  setOpen(false);
+                }}
+              >
+                {status.label}
+              </CommandItem>
+            ))}
+          </CommandGroup>
+        </CommandList>
+      </Command>
+    );
+  }
