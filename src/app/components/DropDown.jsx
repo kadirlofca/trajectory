@@ -51,18 +51,18 @@ export function ComboBoxResponsive() {
 
     if (isDesktop) {
         return (
-          <Popover open={open} onOpenChange={setOpen}>
-            <PopoverTrigger asChild>
-              <Button variant="outline" className="w-[150px] justify-start">
-                {selectedStatus ? <>{selectedStatus.label}</> : <>+ Add Category</>}
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="w-[200px] p-0" align="start">
-              <StatusList setOpen={setOpen} setSelectedStatus={setSelectedStatus} />
-            </PopoverContent>
-          </Popover>
+            <Popover open={open} onOpenChange={setOpen}>
+                <PopoverTrigger asChild>
+                    <Button variant="outline" className="w-[150px] justify-start">
+                        {selectedStatus ? <>{selectedStatus.label}</> : <>+ Add Category</>}
+                    </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-[200px] p-0" align="start">
+                    <StatusList setOpen={setOpen} setSelectedStatus={setSelectedStatus} />
+                </PopoverContent>
+            </Popover>
         )
-      }
+    }
 
     return (
         <Drawer open={open} onOpenChange={setOpen}>
@@ -82,27 +82,27 @@ export function ComboBoxResponsive() {
 
 function StatusList({ setOpen, setSelectedStatus }) {
     return (
-      <Command>
-        <CommandInput placeholder="Search Categories" />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup>
-            {statuses.map((status) => (
-              <CommandItem
-                key={status.value}
-                value={status.value}
-                onSelect={(value) => {
-                  setSelectedStatus(
-                    statuses.find((priority) => priority.value === value) || null
-                  );
-                  setOpen(false);
-                }}
-              >
-                {status.label}
-              </CommandItem>
-            ))}
-          </CommandGroup>
-        </CommandList>
-      </Command>
+        <Command>
+            <CommandInput placeholder="Search Categories" />
+            <CommandList>
+                <CommandEmpty>No results found.</CommandEmpty>
+                <CommandGroup>
+                    {statuses.map((status) => (
+                        <CommandItem
+                            key={status.value}
+                            value={status.value}
+                            onSelect={(value) => {
+                                setSelectedStatus(
+                                    statuses.find((priority) => priority.value === value) || null
+                                );
+                                setOpen(false);
+                            }}
+                        >
+                            {status.label}
+                        </CommandItem>
+                    ))}
+                </CommandGroup>
+            </CommandList>
+        </Command>
     );
-  }
+}

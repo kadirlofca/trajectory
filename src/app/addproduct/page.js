@@ -22,6 +22,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ComboboxDropdownMenu_Part } from "../components/Part";
 import { ComboboxDropdownMenu_Product } from "../components/Product";
+import { ComboboxDropdownMenu_HowTo } from "../components/HowTo";
 
 export default function AddProduct() {
   return (
@@ -45,7 +46,8 @@ export default function AddProduct() {
       <div className="flex flex-wrap justify-left mx-auto max-w-screen-lg">
         <ContextMenu>
           <ContextMenuTrigger>
-            <Button>Right Click Here!</Button></ContextMenuTrigger>
+            <Button>Right Click Here!</Button>
+          </ContextMenuTrigger>
           <ContextMenuContent>
             <ComboBoxResponsive />
           </ContextMenuContent>
@@ -53,21 +55,28 @@ export default function AddProduct() {
       </div>
 
       <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
-      <ComboboxDropdownMenu_Category />
-       <Link href="/addpart"> <Button>Part Page</Button></Link>
+        <ComboboxDropdownMenu_Category />
+        <Link href="/addpart">
+          {" "}
+          <Button>Part Page</Button>
+        </Link>
       </div>
 
       <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
-      <ComboboxDropdownMenu_Part />
-       <Link href="/addproduct"> <Button>Product Page</Button></Link>
+        <ComboboxDropdownMenu_Part />
+        <Link href="/addproduct">
+          {" "}
+          <Button>Product Page</Button>
+        </Link>
       </div>
-
 
       <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
-       <ComboboxDropdownMenu_Product />
+        <ComboboxDropdownMenu_Product />
       </div>
 
-
+      <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
+        <ComboboxDropdownMenu_HowTo />
+      </div>
     </>
   );
 }

@@ -1,7 +1,10 @@
 "use client";
 import Link from "next/link";
 
-import { ComboboxDropdownMenu, ComboboxDropdownMenu_Category } from "../components/Category";
+import {
+  ComboboxDropdownMenu,
+  ComboboxDropdownMenu_Category,
+} from "../components/Category";
 import { ComboBoxResponsive } from "../components/DropDown";
 import {
   ContextMenu,
@@ -44,7 +47,8 @@ export default function AddPart() {
       <div className="flex flex-wrap justify-left mx-auto max-w-screen-lg">
         <ContextMenu>
           <ContextMenuTrigger>
-            <Button>Right Click Here!</Button></ContextMenuTrigger>
+            <Button>Right Click Here!</Button>
+          </ContextMenuTrigger>
           <ContextMenuContent>
             <ComboBoxResponsive />
           </ContextMenuContent>
@@ -52,16 +56,20 @@ export default function AddPart() {
       </div>
 
       <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
-      <ComboboxDropdownMenu_Category />
-       <Link href="/addpart"> <Button>Part Page</Button></Link>
+        <ComboboxDropdownMenu_Category />
+        <Link href="/addpart">
+          {" "}
+          <Button>Part Page</Button>
+        </Link>
       </div>
 
       <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
-      <ComboboxDropdownMenu_Part />
-       <Link href="/addproduct"> <Button>Product Page</Button></Link>
+        <ComboboxDropdownMenu_Part />
+        <Link href="/addproduct">
+          {" "}
+          <Button>Product Page</Button>
+        </Link>
       </div>
-
-
     </>
   );
 }

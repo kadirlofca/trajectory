@@ -63,13 +63,15 @@ export default function AddCategory() {
       </div>
 
       <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
-      <ComboboxDropdownMenu_Category />
-       <Link href="/addpart"> <Button>Part Page</Button></Link>
+        <ComboboxDropdownMenu_Category />
+        <Link href="/addpart">
+          {" "}
+          <Button>Part Page</Button>
+        </Link>
       </div>
 
       <div className="flex flex-wrap pt-5 justify-right mx-auto max-w-screen-lg">
-          <CollapsibleDemo />
-        
+        <CollapsibleDemo />
       </div>
     </>
   );

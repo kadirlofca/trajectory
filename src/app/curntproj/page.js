@@ -42,7 +42,8 @@ export default function CurrentProj() {
       <div className="flex flex-wrap justify-left mx-auto max-w-screen-lg">
         <ContextMenu>
           <ContextMenuTrigger>
-            <Button>Right Click Here!</Button></ContextMenuTrigger>
+            <Button>Right Click Here!</Button>
+          </ContextMenuTrigger>
           <ContextMenuContent>
             <ComboBoxResponsive />
           </ContextMenuContent>
@@ -51,7 +52,7 @@ export default function CurrentProj() {
 
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
         <Link href="/addcategory">
-          <p>Add Category test page</p>
+          <p>Category view test page</p>
         </Link>
       </div>
     </>
