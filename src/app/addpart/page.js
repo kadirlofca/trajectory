@@ -32,7 +32,7 @@ export default function AddPart() {
         <div className="flex flex-wrap justify-center gap-12 max-w-screen-lg mx-auto mb-4 py-4 pl-8 border-b-2 border-gray-400 bg-gray-400">
           <div className="max-w-[29%]">
             <Link href="/">
-              Trajectory heps you organize and keep track of your car projects.
+              Trajectory helps you organize and keep track of your car projects.
             </Link>
           </div>
 
@@ -44,17 +44,6 @@ export default function AddPart() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-left mx-auto max-w-screen-lg">
-        <ContextMenu>
-          <ContextMenuTrigger>
-            <Button>Right Click Here!</Button>
-          </ContextMenuTrigger>
-          <ContextMenuContent>
-            <ComboBoxResponsive />
-          </ContextMenuContent>
-        </ContextMenu>
-      </div>
-
       <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
         <ComboboxDropdownMenu_Category />
         <Link href="/addpart">
