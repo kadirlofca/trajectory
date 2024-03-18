@@ -22,54 +22,56 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 
 export function CardWithForm_AddingProject() {
     return (
-        <Card className="w-[350px]">
+        <Card>
             <CardContent>
                 <Popover>
                     <PopoverTrigger>
-                        <Button>Add New Project</Button>
+                        <div className="pt-5">
+                        <Button>Add New Project</Button></div>
                     </PopoverTrigger>
                     <PopoverContent>
+                        <div>
                             <div>
-                                <div>
-                                    <h4 className="font-medium leading-none">New Project</h4>
-                                </div>
-                                <div className="grid gap-2">
-                                    <div className="grid grid-cols-3 items-center gap-4">
-                                        <Label id="year">Year</Label>
-                                        <Input
-                                            id="year"
-                                            defaultValue="100%"
-                                            className="col-span-2 h-8"
-                                        />
-                                    </div>
-                                    <div className="grid grid-cols-3 items-center gap-4">
-                                        <Label id="make">Make</Label>
-                                        <Input
-                                            id="make"
-                                            defaultValue="300px"
-                                            className="col-span-2 h-8"
-                                        />
-                                    </div>
-                                    <div className="grid grid-cols-3 items-center gap-4">
-                                        <Label id="model">Model</Label>
-                                        <Input
-                                            id="model"
-                                            defaultValue="25px"
-                                            className="col-span-2 h-8"
-                                        />
-                                    </div>
-                                    <div className="grid grid-cols-3 items-center gap-4">
-                                        <Label id="budget">Budget</Label>
-                                        <Input
-                                            id="budget"
-                                            defaultValue="none"
-                                            className="col-span-2 h-8"
-                                        />
-                                    </div>
-                                </div>
-                                <Button>Add</Button>
+                                <h4 className="font-medium text-center leading-none">New Project</h4>
                             </div>
-                        </PopoverContent>
+                            <div className="grid gap-2">
+                                <div className="grid grid-cols-3 items-center gap-4 pt-4">
+                                    <Label id="year">Year</Label>
+                                    <Input
+                                        id="year"
+                                        className="col-span-2 h-8"
+                                        placeholder="Required"
+                                    />
+                                </div>
+                                <div className="grid grid-cols-3 items-center gap-4">
+                                    <Label id="make">Make</Label>
+                                    <Input
+                                        id="make"
+                                        className="col-span-2 h-8"
+                                        placeholder="Required"
+                                    />
+                                </div>
+                                <div className="grid grid-cols-3 items-center gap-4">
+                                    <Label id="model">Model</Label>
+                                    <Input
+                                        id="model"
+                                        className="col-span-2 h-8"
+                                        placeholder="Required"
+                                    />
+                                </div>
+                                <div className="grid grid-cols-3 items-center gap-4">
+                                    <Label id="budget">Budget</Label>
+                                    <Input
+                                        id="budget"
+                                        className="col-span-2 h-8"
+                                        placeholder="Optional"
+                                    />
+                                </div>
+                            </div>
+                            <div className="text-center pt-4">
+                                <Button>Add</Button></div>
+                        </div>
+                    </PopoverContent>
                 </Popover>
             </CardContent>
         </Card>

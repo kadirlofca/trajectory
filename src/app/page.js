@@ -35,8 +35,8 @@ export default async function Projects() {
             <CardWithForm_AddingProject />
           </div>
         </Link>
-        <Link href="/curntproj">
-          <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
+        <Link href="/addcategory">
+          <div className="flex flex-wrap justify-center pt-5 mx-auto max-w-screen-lg">
             <CardWithForm_StickyNote
               projectData={{ name: "asd", budget: "234" }}
             ></CardWithForm_StickyNote>

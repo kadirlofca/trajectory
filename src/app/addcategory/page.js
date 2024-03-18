@@ -30,6 +30,7 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
+import { CardWithForm_CurntProj } from "../components/CurrentProjectCard";
 
 
 export default function AddCategory() {
@@ -51,11 +52,13 @@ export default function AddCategory() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
+      <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
+        <CardWithForm_CurntProj />
         <ComboboxDropdownMenu_Category />
         <Link href="/addpart">
           {" "}
-          <Button>Part Page</Button>
+          <div className="pt-3">
+          <Button>Part Page</Button></div>
         </Link>
       </div>
 

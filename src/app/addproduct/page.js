@@ -24,6 +24,7 @@ import { ComboboxDropdownMenu_Part } from "../components/Part";
 import { ComboboxDropdownMenu_Product } from "../components/Product";
 import { ComboboxDropdownMenu_HowTo } from "../components/HowTo";
 import { CollapsibleDemo } from "../components/Collapse";
+import { CardWithForm_CurntProj } from "../components/CurrentProjectCard";
 
 export default function AddProduct() {
   return (
@@ -44,7 +45,8 @@ export default function AddProduct() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
+      <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
+        <CardWithForm_CurntProj />
         <ComboboxDropdownMenu_Category />
         <Link href="/addpart">
           {" "}
