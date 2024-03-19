@@ -30,7 +30,8 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
-import { CollapsibleDemo } from "../components/Collapse";
+import { CardWithForm_CurntProj } from "../components/CurrentProjectCard";
+
 
 export default function AddCategory() {
   return (
@@ -39,7 +40,7 @@ export default function AddCategory() {
         <div className="flex flex-wrap justify-center gap-12 max-w-screen-lg mx-auto mb-4 py-4 pl-8 border-b-2 border-gray-400 bg-gray-400">
           <div className="max-w-[29%]">
             <Link href="/">
-              Trajectory heps you organize and keep track of your car projects.
+              Trajectory helps you organize and keep track of your car projects.
             </Link>
           </div>
 
@@ -51,26 +52,17 @@ export default function AddCategory() {
           </div>
         </div>
       </div>
-      <div className="flex flex-wrap justify-left mx-auto max-w-screen-lg">
-        <ContextMenu>
-          <ContextMenuTrigger>
-            <Button>Right Click Here!</Button>
-          </ContextMenuTrigger>
-          <ContextMenuContent>
-            <ComboBoxResponsive />
-          </ContextMenuContent>
-        </ContextMenu>
+      <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
+        <CardWithForm_CurntProj />
+        <ComboboxDropdownMenu_Category />
+        <Link href="/addpart">
+          {" "}
+          <div className="pt-3">
+          <Button>Part Page</Button></div>
+        </Link>
       </div>
 
-      <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
-      <ComboboxDropdownMenu_Category />
-       <Link href="/addpart"> <Button>Part Page</Button></Link>
-      </div>
-
-      <div className="flex flex-wrap pt-5 justify-right mx-auto max-w-screen-lg">
-          <CollapsibleDemo />
-        
-      </div>
+      
     </>
   );
 }
