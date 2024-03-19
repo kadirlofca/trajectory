@@ -22,7 +22,7 @@ import {
 
 export function CardWithForm_CurntProj() {
     return (
-        <Card>
+        <Card className="mb-4">
             <CardHeader>
                 <CardTitle>Current Project Name</CardTitle>
             </CardHeader>

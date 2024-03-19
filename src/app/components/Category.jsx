@@ -26,6 +26,8 @@ import {
     DropdownMenuSubTrigger,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { Collapsible } from "@radix-ui/react-collapsible";
+import { Collapse, CollapsibleDemo } from "@/app/components/Collapse";
 
 const labels = [
     "----",
@@ -55,9 +57,8 @@ export function ComboboxDropdownMenu_Category() {
                     <DropdownMenuLabel>Actions</DropdownMenuLabel>
                     <DropdownMenuGroup>
                         <DropdownMenuItem>
-                            Edit
+                            <Link href="/addpart">Part Page</Link>
                         </DropdownMenuItem>
-                        <DropdownMenuSeparator />
                         <DropdownMenuSub>
                             <DropdownMenuSubTrigger>
                                 + Add a Part

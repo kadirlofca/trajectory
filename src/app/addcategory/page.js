@@ -31,6 +31,7 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { CardWithForm_CurntProj } from "../components/CurrentProjectCard";
+import { CollapsibleCategory } from "../components/CategoryCollapse";
 
 
 export default function AddCategory() {
@@ -55,11 +56,6 @@ export default function AddCategory() {
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
         <CardWithForm_CurntProj />
         <ComboboxDropdownMenu_Category />
-        <Link href="/addpart">
-          {" "}
-          <div className="pt-3">
-          <Button>Part Page</Button></div>
-        </Link>
       </div>
 
       

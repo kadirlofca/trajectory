@@ -21,7 +21,7 @@ import {
 
 export const CardWithForm_StickyNote = ({projectData}) => {
     return (
-        <Card className="w-[350px]">
+        <Card className="w-[350px] ml-4 mb-4">
             <CardHeader>
                 <CardTitle>{projectData.name}</CardTitle>
             </CardHeader>

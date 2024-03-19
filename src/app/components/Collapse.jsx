@@ -17,9 +17,9 @@ export function CollapsibleDemo() {
         <Collapsible
             open={isOpen}
             onOpenChange={setIsOpen}
-            className="w-[350px] space-y-2"
+            className="ml-10"
         >
-            <div className="flex items-center justify-between space-x-4 px-4">
+            <div className="flex items-center justify-between ml-10 space-x-4 px-4">
                 <h4 className="text-sm font-semibold">
                     More Products
                 </h4>
@@ -30,14 +30,14 @@ export function CollapsibleDemo() {
                     </Button>
                 </CollapsibleTrigger>
             </div>
-            <div className="rounded-md border px-4 py-3 font-mono text-sm">
+            <div className="rounded-md border px-4 ml-10 py-3 font-mono text-sm">
                 -----
             </div>
             <CollapsibleContent className="space-y-2">
-                <div className="rounded-md border px-4 py-3 font-mono text-sm">
+                <div className="rounded-md border px-4 ml-10 py-3 font-mono text-sm">
                     -----
                 </div>
-                <div className="rounded-md border px-4 py-3 font-mono text-sm">
+                <div className="rounded-md border px-4 ml-10 py-3 font-mono text-sm">
                     -----
                 </div>
             </CollapsibleContent>

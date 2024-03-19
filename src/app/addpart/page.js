@@ -47,18 +47,10 @@ export default function AddPart() {
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
         <CardWithForm_CurntProj />
         <ComboboxDropdownMenu_Category />
-        <Link href="/addpart">
-          {" "}
-          <Button>Part Page</Button>
-        </Link>
       </div>
 
-      <div className="flex flex-wrap pt-5 justify-center mx-auto max-w-screen-lg">
+      <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
         <ComboboxDropdownMenu_Part />
-        <Link href="/addproduct">
-          {" "}
-          <Button>Product Page</Button>
-        </Link>
       </div>
     </>
   );
