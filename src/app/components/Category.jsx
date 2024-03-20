@@ -56,9 +56,11 @@ export function ComboboxDropdownMenu_Category() {
                 <DropdownMenuContent align="end" className="w-[200px]">
                     <DropdownMenuLabel>Actions</DropdownMenuLabel>
                     <DropdownMenuGroup>
-                        <DropdownMenuItem>
-                            <Link href="/addpart">Part Page</Link>
-                        </DropdownMenuItem>
+                        <Link href="/addpart">
+                            <DropdownMenuItem>
+                                Part Page
+                            </DropdownMenuItem>
+                            </Link>
                         <DropdownMenuSub>
                             <DropdownMenuSubTrigger>
                                 + Add a Part
