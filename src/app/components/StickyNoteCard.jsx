@@ -38,7 +38,6 @@ export const CardWithForm_StickyNote = ({ projectData }) => {
             </CardContent>
             <CardFooter className="flex justify-between">
                 <button onClick={() => { deleteProject(projectData) }}><Button variant="outline">Delete</Button></button>
-                <Button>
                     <Popover>
                         <PopoverTrigger>
                             <div className="pt-5">
@@ -120,7 +119,6 @@ export const CardWithForm_StickyNote = ({ projectData }) => {
                             </Form>
                         </PopoverContent>
                     </Popover>
-                </Button>
             </CardFooter>
         </Card>
     )
