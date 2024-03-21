@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -22,9 +21,8 @@ import {
 } from "@/components/ui/card"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
-
-
 const formSchema = z.object({
+    name: z.string(),
     year: z.string(),
     make: z.string(),
     model: z.string(),
@@ -40,7 +38,7 @@ export function CardWithForm_AddingProject() {
     })
 
     const onSubmit = (values) => {
-        console.log("asdads")
+        console.log(values)
     }
 
     return (
@@ -55,10 +53,21 @@ export function CardWithForm_AddingProject() {
                         <div>
                             <h4 className="font-medium text-center leading-none">New Project</h4>
                         </div>
-
-
                         <Form {...form}>
                             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                                <FormField
+                                    control={form.control}
+                                    name="name"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormLabel>Project Name</FormLabel>
+                                            <FormControl>
+                                                <Input placeholder="New Project" {...field} />
+                                            </FormControl>
+                                            <FormMessage />
+                                        </FormItem>
+                                    )}
+                                />
                                 <FormField
                                     control={form.control}
                                     name="year"
@@ -114,8 +123,6 @@ export function CardWithForm_AddingProject() {
                                 <Button type="submit">Submit</Button>
                             </form>
                         </Form>
-
-
                     </PopoverContent>
                 </Popover>
             </CardContent>
