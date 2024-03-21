@@ -1,4 +1,3 @@
-import StickyNote from "@/app/components/StickyNote";
 import PocketBase from "pocketbase";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
@@ -30,19 +29,12 @@ export default async function Projects() {
       </div>
 
       <div className="w-full h-full">
-      <Link href="/">
-          <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
-            <CardWithForm_AddingProject />
-          </div>
-        </Link>
-        <Link href="/addcategory">
-          <div className="flex flex-wrap justify-center pt-5 mb-4 mx-auto max-w-screen-lg">
-            <CardWithForm_StickyNote
-              projectData={{ name: "asd", budget: "234" }}
-            ></CardWithForm_StickyNote>
-            {projects}
-          </div>
-        </Link>
+        <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
+          <CardWithForm_AddingProject />
+        </div>
+        <div className="flex flex-wrap justify-center pt-5 mb-4 mx-auto max-w-screen-lg">
+          {projects}
+        </div>
       </div>
     </div>
   );
