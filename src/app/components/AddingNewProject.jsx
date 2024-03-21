@@ -4,6 +4,7 @@ import * as React from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import createProject from "../actions/createProject"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -38,7 +39,7 @@ export function CardWithForm_AddingProject() {
     })
 
     const onSubmit = (values) => {
-        console.log(values)
+        createProject(values)
     }
 
     return (
