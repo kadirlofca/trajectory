@@ -27,26 +27,30 @@ export function CardWithForm_Product() {
                 <CardDescription>Add a direct link to a specific part.</CardDescription>
             </CardHeader>
             <CardContent>
-                <form>
-                    <div className="grid w-full items-center gap-4">
-                        <div className="flex flex-col space-y-1.5">
-                            <Label htmlFor="name">Name</Label>
-                            <Input id="name_product" placeholder="Name of product" />
+                <div>
+                    <form>
+                        <div className="grid w-full items-center gap-4">
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="name">Name</Label>
+                                <Input id="name_product" placeholder="Name of product" />
+                            </div>
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="link">Link</Label>
+                                <Input id="product_link" placeholder="Link to Product" />
+                            </div>
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="link">Price</Label>
+                                <Input id="product_price" placeholder="Price of Product" />
+                            </div>
                         </div>
-                        <div className="flex flex-col space-y-1.5">
-                            <Label htmlFor="link">Link</Label>
-                            <Input id="product_link" placeholder="Link to Product" />
-                        </div>
-                        <div className="flex flex-col space-y-1.5">
-                            <Label htmlFor="link">Price</Label>
-                            <Input id="product_price" placeholder="Price of Product" />
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </CardContent>
             <CardFooter className="flex justify-between">
+                <div>
                 <Button variant="outline">Cancel</Button>
                 <Button>Add</Button>
+                </div>
             </CardFooter>
         </Card>
     )

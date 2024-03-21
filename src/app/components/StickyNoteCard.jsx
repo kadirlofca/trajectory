@@ -19,20 +19,23 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 
-export const CardWithForm_StickyNote = ({projectData}) => {
+export const CardWithForm_StickyNote = ({ projectData }) => {
     return (
         <Card className="w-[350px] ml-4 mb-4">
             <CardHeader>
                 <CardTitle>{projectData.name}</CardTitle>
             </CardHeader>
             <CardContent>
-                <p>Budget = {projectData.budget}</p>
-                <p>Shopping Cart = </p>
-                <p>Total Spent = </p>
+                <div>
+                    <div>Budget = {projectData.budget}</div>
+                    <div>Shopping Cart = </div>
+                    <div>Total Spent = </div>
+                </div>
             </CardContent>
             <CardFooter className="flex justify-between">
-                <Button variant="outline">Delete</Button>
-                <Button>Edit</Button>
+                <div>
+                    <Button variant="outline">Delete</Button></div>
+                <div><Button>Edit</Button></div>
             </CardFooter>
         </Card>
     )

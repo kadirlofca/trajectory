@@ -38,12 +38,14 @@ export function ComboboxDropdownMenu_HowTo() {
 
     return (
         <div className="flex w-full flex-col items-start justify-between rounded-md border ml-10 px-4 py-3 sm:flex-row sm:items-center">
+            <div>
             <p className="text-sm font-medium leading-none">
                 <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
                     {label}
                 </span>
                 <span className="text-muted-foreground">---How-To Name---</span>
             </p>
+            </div>
             <DropdownMenu open={open} onOpenChange={setOpen}>
                 <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="sm">

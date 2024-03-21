@@ -13,7 +13,9 @@ export default async function Projects() {
   const pb = new PocketBase("http://127.0.0.1:8090");
   const projects = (await pb.collection("projects").getFullList())
     .reverse()
-    .map((project) => <CardWithForm_StickyNote projectData={project} />);
+    .map((project, index) => (
+      <CardWithForm_StickyNote key={project.id} projectData={project} />
+    ));
 
   return (
     <div>
@@ -30,7 +32,7 @@ export default async function Projects() {
       </div>
 
       <div className="w-full h-full">
-      <Link href="/">
+        <Link href="/">
           <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
             <CardWithForm_AddingProject />
           </div>
