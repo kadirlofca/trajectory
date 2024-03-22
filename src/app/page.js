@@ -1,6 +1,5 @@
 import PocketBase from "pocketbase";
 import { revalidatePath } from "next/cache";
-import Link from "next/link";
 import { CardWithForm_StickyNote } from "./components/StickyNoteCard";
 import { CardWithForm_AddingProject } from "./components/AddingNewProject";
 

@@ -51,7 +51,7 @@ export const CardWithForm_StickyNote = ({ projectData }) => {
     }
 
     return (
-        <Card className="w-[350px] ml-4 mb-4">
+        <Card onClick={() => window.open("/pages/" + projectData.id, "_self")} className="w-[350px] ml-4 mb-4 hover:cursor-pointer">
             <CardHeader>
                 <CardTitle>{projectData.name}</CardTitle>
             </CardHeader>

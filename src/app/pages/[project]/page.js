@@ -1,26 +1,12 @@
-"use client";
+'use client'
+
 import Link from "next/link";
+import PocketBase from 'pocketbase';
 
-import { ComboBoxResponsive } from "../components/DropDown";
-import {
-  ContextMenu,
-  ContextMenuContent,
-  ContextMenuItem,
-  ContextMenuTrigger,
-} from "@/components/ui/context-menu";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
-import { Button } from "@/components/ui/button";
+export default function Page({ params }) {
+  const pb = new PocketBase("http://127.0.0.1:8090")
+  pb.collection('projects').getOne(params.project)
 
-export default function CurrentProj() {
   return (
     <>
       <div>
