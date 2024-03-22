@@ -31,7 +31,6 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { CardWithForm_CurntProj } from "../components/CurrentProjectCard";
-import { CollapsibleCategory } from "../components/CategoryCollapse";
 
 
 export default function AddCategory() {

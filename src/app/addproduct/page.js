@@ -23,7 +23,6 @@ import { Button } from "@/components/ui/button";
 import { ComboboxDropdownMenu_Part } from "../components/Part";
 import { ComboboxDropdownMenu_Product } from "../components/Product";
 import { ComboboxDropdownMenu_HowTo } from "../components/HowTo";
-import { CollapsibleDemo } from "../components/Collapse";
 import { CardWithForm_CurntProj } from "../components/CurrentProjectCard";
 
 export default function AddProduct() {
@@ -58,9 +57,7 @@ export default function AddProduct() {
         <ComboboxDropdownMenu_Product />
       </div>
 
-      <div className="flex flex-wrap justify-right mx-auto max-w-screen-lg">
-        <CollapsibleDemo />
-      </div>
+      
 
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
         <ComboboxDropdownMenu_HowTo />
