@@ -26,8 +26,6 @@ import {
     DropdownMenuSubTrigger,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { Collapsible } from "@radix-ui/react-collapsible";
-import { Collapse, CollapsibleDemo } from "@/app/components/Collapse";
 
 const labels = [
     "----",
