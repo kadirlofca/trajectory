@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -51,15 +52,18 @@ export const CardWithForm_StickyNote = ({ projectData }) => {
     }
 
     return (
-        <Card onClick={() => window.open("/pages/" + projectData.id, "_self")} className="w-[350px] ml-4 mb-4 hover:cursor-pointer">
-            <CardHeader>
-                <CardTitle>{projectData.name}</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <p>Budget = {projectData.budget}</p>
-                <p>Shopping Cart = </p>
-                <p>Total Spent = </p>
-            </CardContent>
+        <Card className="w-[350px] ml-4 mb-4 hover:cursor-pointer">
+            <Link href={"/pages/" + projectData.id}>
+                <CardHeader>
+                    <CardTitle>{projectData.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>Budget: {projectData.budget}</p>
+                    <p>Shopping Cart: not implemented</p>
+                    <p>Total Spent: not implemented</p>
+                </CardContent>
+            </Link>
+
             <CardFooter className="flex justify-between">
                 <button onClick={() => { deleteProject(projectData) }}><Button variant="outline">Delete</Button></button>
                 <Popover>
@@ -144,6 +148,6 @@ export const CardWithForm_StickyNote = ({ projectData }) => {
                     </PopoverContent>
                 </Popover>
             </CardFooter>
-        </Card>
+        </Card >
     )
 }
