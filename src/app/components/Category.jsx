@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import PocketBase from "pocketbase";
 import { Calendar, MoreHorizontal, Tags, Trash, User } from "lucide-react"
 import Link from "next/link";
 
@@ -33,7 +34,7 @@ const labels = [
     "----"
 ]
 
-export function Category({ categoryID }) {
+export function Category({ data }) {
     const [label, setLabel] = React.useState("category")
     const [open, setOpen] = React.useState(false)
     const [isCompleted, setIsCompleted] = React.useState(false);
@@ -49,7 +50,7 @@ export function Category({ categoryID }) {
                 <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
                     {label}
                 </span>
-                <span className="text-muted-foreground">---Category Name---</span>
+                <span className="text-muted-foreground">{data.categoryName}</span>
             </p>
             <DropdownMenu open={open} onOpenChange={setOpen}>
                 <DropdownMenuTrigger asChild>

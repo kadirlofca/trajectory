@@ -1,40 +1,22 @@
-'use client'
+'use server'
 
 import Link from "next/link";
 import PocketBase from "pocketbase";
+import { CategoryButton } from "@/app/components/CategoryButton";
 import { Category } from "@/app/components/Category";
-import { Part } from "@/app/components/Part";
-import { Product } from "@/app/components/Product";
 
 export default async function Page({ params }) {
-
-
-
-
-
-
-
+  const projectID = params.project
 
   const pb = new PocketBase("http://127.0.0.1:8090")
-  const projectID = await pb.collection('projects').getOne(params.project).id
-  const categories = await pb.collection('project_category').getList(0, 99, {
+  const projectCategories = await pb.collection('project_category').getList(0, 99, {
     filter: 'project="' + projectID + '"'
   })
 
-  console.log(categories)
-
-
-  // const itemIDs = items.items.map((item) => item.id)
-  // const itemsRender = itemIDs.map((id) => <Product productID={id} />)
-
-
-
-
-
-
-
-
-
+  const items = await Promise.all(projectCategories.items.map(async (data) => {
+    data.categoryName = (await pb.collection('category').getOne("1b2810492fjfjw5")).name
+    return <Category data={data} />
+  }))
 
   return (
     <>
@@ -55,14 +37,8 @@ export default async function Page({ params }) {
         </div>
       </div>
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
-        <div className="flex w-full flex-col items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center">
-          <p className="text-sm font-medium leading-none">
-            <button onClick={() => { }}>Add Category +</button>
-          </p>
-        </div>
-        <Category></Category>
-        <Part></Part>
-        <Product></Product>
+        <CategoryButton />
+        {items}
       </div>
     </>
   );
