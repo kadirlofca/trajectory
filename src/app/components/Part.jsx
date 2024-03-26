@@ -37,7 +37,7 @@ const labels = [
     "----"
 ]
 
-export function Part({ partID }) {
+export function Part({ data }) {
     const [label, setLabel] = React.useState("part")
     const [open, setOpen] = React.useState(false)
 

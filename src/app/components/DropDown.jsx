@@ -1,4 +1,4 @@
-
+'use client'
 
 import * as React from "react"
 import { MoreHorizontal, Tags, Trash } from "lucide-react"
@@ -12,7 +12,16 @@ const labels = [
     "----"
 ]
 
-export function DropdownMenuSection({ open, setOpen, setLabel, handleMarkAsComplete }) {
+export function DropdownMenuSection() {
+    const [label, setLabel] = React.useState("category")
+    const [open, setOpen] = React.useState(false)
+    const [isCompleted, setIsCompleted] = React.useState(false);
+
+    const handleMarkAsComplete = () => {
+        setIsCompleted(true);
+        setOpen(false);
+    }
+
     return (
         <DropdownMenu open={open} onOpenChange={setOpen}>
             <DropdownMenuTrigger asChild>
