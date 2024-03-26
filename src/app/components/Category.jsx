@@ -33,7 +33,7 @@ const labels = [
     "----"
 ]
 
-export function ComboboxDropdownMenu_Category() {
+export function Category() {
     const [label, setLabel] = React.useState("category")
     const [open, setOpen] = React.useState(false)
 
@@ -58,7 +58,7 @@ export function ComboboxDropdownMenu_Category() {
                             <DropdownMenuItem>
                                 Part Page
                             </DropdownMenuItem>
-                            </Link>
+                        </Link>
                         <DropdownMenuSub>
                             <DropdownMenuSubTrigger>
                                 + Add a Part

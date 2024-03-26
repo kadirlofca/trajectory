@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import PocketBase from 'pocketbase';
+import { AddCategoryButton } from "@/app/components/AddCategoryButton";
+import { Category } from "@/app/components/Category";
+import { Part } from "@/app/components/Part";
+import { Product } from "@/app/components/Product";
 
 export default function Page({ params }) {
   const pb = new PocketBase("http://127.0.0.1:8090")
@@ -26,9 +30,10 @@ export default function Page({ params }) {
         </div>
       </div>
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
-        <Link href="/addcategory">
-          <p>Category view test page</p>
-        </Link>
+        <AddCategoryButton></AddCategoryButton>
+        <Category></Category>
+        <Part></Part>
+        <Product></Product>
       </div>
     </>
   );

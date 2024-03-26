@@ -32,7 +32,7 @@ const labels = [
     "----"
 ]
 
-export function ComboboxDropdownMenu_Product() {
+export function Product() {
     const [label, setLabel] = React.useState("product")
     const [open, setOpen] = React.useState(false)
 

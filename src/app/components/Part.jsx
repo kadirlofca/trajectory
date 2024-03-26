@@ -35,7 +35,7 @@ const labels = [
     "----"
 ]
 
-export function ComboboxDropdownMenu_Part() {
+export function Part() {
     const [label, setLabel] = React.useState("part")
     const [open, setOpen] = React.useState(false)
 
@@ -57,9 +57,9 @@ export function ComboboxDropdownMenu_Part() {
                     <DropdownMenuLabel>Actions</DropdownMenuLabel>
                     <DropdownMenuGroup>
                         <Link href="/addproduct">
-                        <DropdownMenuItem>
-                            Product Page
-                        </DropdownMenuItem></Link>
+                            <DropdownMenuItem>
+                                Product Page
+                            </DropdownMenuItem></Link>
                         <DropdownMenuSeparator />
                         <DropdownMenuSub>
                             <DropdownMenuSubTrigger>
