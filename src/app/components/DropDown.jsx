@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from "react"
+import deleteCategory from "../actions/deleteCategory"
 import { MoreHorizontal, Tags, Trash } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -12,7 +13,7 @@ const labels = [
     "----"
 ]
 
-export function DropdownMenuSection() {
+export function DropdownMenuSection({ data }) {
     const [label, setLabel] = React.useState("category")
     const [open, setOpen] = React.useState(false)
     const [isCompleted, setIsCompleted] = React.useState(false);
@@ -69,8 +70,9 @@ export function DropdownMenuSection() {
                         </DropdownMenuSubTrigger>
                     </DropdownMenuSub>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem className="text-red-600">
+                    <DropdownMenuItem onClick={() => { console.log("hello") }} className="text-red-600">
                         <Trash className="mr-2 h-4 w-4" />
+                        <button onClick={() => { deleteProject(projectData) }}><Button variant="outline">Delete</Button></button>
                         Delete
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
