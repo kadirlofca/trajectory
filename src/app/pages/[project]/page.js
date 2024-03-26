@@ -2,14 +2,19 @@
 
 import Link from "next/link";
 import PocketBase from 'pocketbase';
-import { AddCategoryButton } from "@/app/components/AddCategoryButton";
 import { Category } from "@/app/components/Category";
 import { Part } from "@/app/components/Part";
 import { Product } from "@/app/components/Product";
 
 export default function Page({ params }) {
   const pb = new PocketBase("http://127.0.0.1:8090")
-  pb.collection('projects').getOne(params.project)
+  const project = pb.collection('projects').getOne(params.project)
+
+  const items =
+    project.categories.map((category) =>
+      category.map((part) =>
+        part.map((item) => <Product />
+        )))
 
   return (
     <>
@@ -30,7 +35,11 @@ export default function Page({ params }) {
         </div>
       </div>
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
-        <AddCategoryButton></AddCategoryButton>
+        <div className="flex w-full flex-col items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center">
+          <p className="text-sm font-medium leading-none">
+            <button onClick={() => { }}>Add Category +</button>
+          </p>
+        </div>
         <Category></Category>
         <Part></Part>
         <Product></Product>
