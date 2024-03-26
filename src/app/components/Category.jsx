@@ -18,7 +18,7 @@ export async function Category({ data }) {
 
     return (
         <>
-            <div className={`flex w-full flex-col items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center`}>
+            <div className={`flex w-full flex-col mt-4 items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center`}>
                 <p className="text-sm font-medium leading-none">
                     <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
                         Category
