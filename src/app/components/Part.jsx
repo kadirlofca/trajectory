@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import PocketBase from 'pocketbase';
 import { Calendar, MoreHorizontal, Tags, Trash, User } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -28,6 +29,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { CardWithForm, CardWithForm_HowTo } from "./HowToInput"
 import { CardWithForm_Product } from "./AddingProduct"
+import { Product } from "./Product";
 
 const labels = [
     "----",
@@ -35,9 +37,11 @@ const labels = [
     "----"
 ]
 
-export function Part() {
+export function Part({ partID }) {
     const [label, setLabel] = React.useState("part")
     const [open, setOpen] = React.useState(false)
+
+
 
     return (
         <div className="flex w-full flex-col items-start justify-between rounded-md ml-5 border px-4 py-3 sm:flex-row sm:items-center">

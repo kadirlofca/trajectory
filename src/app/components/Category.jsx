@@ -33,13 +33,13 @@ const labels = [
     "----"
 ]
 
-export function Category() {
+export function Category({ categoryID }) {
     const [label, setLabel] = React.useState("category")
     const [open, setOpen] = React.useState(false)
     const [isCompleted, setIsCompleted] = React.useState(false);
 
     const handleMarkAsComplete = () => {
-        setIsCompleted(true); 
+        setIsCompleted(true);
         setOpen(false);
     }
 

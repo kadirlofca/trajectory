@@ -32,7 +32,7 @@ const labels = [
     "----"
 ]
 
-export function Product() {
+export function Product({ productID }) {
     const [label, setLabel] = React.useState("product")
     const [open, setOpen] = React.useState(false)
 

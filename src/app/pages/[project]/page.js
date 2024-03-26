@@ -1,20 +1,40 @@
 'use client'
 
 import Link from "next/link";
-import PocketBase from 'pocketbase';
+import PocketBase from "pocketbase";
 import { Category } from "@/app/components/Category";
 import { Part } from "@/app/components/Part";
 import { Product } from "@/app/components/Product";
 
-export default function Page({ params }) {
-  const pb = new PocketBase("http://127.0.0.1:8090")
-  const project = pb.collection('projects').getOne(params.project)
+export default async function Page({ params }) {
 
-  const items =
-    project.categories.map((category) =>
-      category.map((part) =>
-        part.map((item) => <Product />
-        )))
+
+
+
+
+
+
+
+  const pb = new PocketBase("http://127.0.0.1:8090")
+  const projectID = await pb.collection('projects').getOne(params.project).id
+  const categories = await pb.collection('project_category').getList(0, 99, {
+    filter: 'project="' + projectID + '"'
+  })
+
+  console.log(categories)
+
+
+  // const itemIDs = items.items.map((item) => item.id)
+  // const itemsRender = itemIDs.map((id) => <Product productID={id} />)
+
+
+
+
+
+
+
+
+
 
   return (
     <>
