@@ -39,7 +39,6 @@ export function ComboboxDropdownMenu_Category() {
     const [isCompleted, setIsCompleted] = React.useState(false);
 
     const handleMarkAsComplete = () => {
-        setLabel("category");
         setIsCompleted(true); 
         setOpen(false);
     }
