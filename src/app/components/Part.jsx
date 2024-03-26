@@ -56,10 +56,6 @@ export function Part() {
                 <DropdownMenuContent align="end" className="w-[200px]">
                     <DropdownMenuLabel>Actions</DropdownMenuLabel>
                     <DropdownMenuGroup>
-                        <Link href="/addproduct">
-                            <DropdownMenuItem>
-                                Product Page
-                            </DropdownMenuItem></Link>
                         <DropdownMenuSeparator />
                         <DropdownMenuSub>
                             <DropdownMenuSubTrigger>
