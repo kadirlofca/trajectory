@@ -4,6 +4,7 @@ import Link from "next/link";
 import PocketBase from "pocketbase";
 import { CategoryButton } from "@/app/components/CategoryButton";
 import { Category } from "@/app/components/Category";
+import { AddPartDropdown } from "@/app/components/AddPartDropDown";
 
 export default async function Page({ params }) {
   const projectID = params.project
