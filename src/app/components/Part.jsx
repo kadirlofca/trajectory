@@ -49,7 +49,7 @@ export function Part({ data }) {
                 <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
                     {label}
                 </span>
-                <span className="text-muted-foreground">---Part Name---</span>
+                <span className="text-muted-foreground">{data.partName}</span>
             </p>
             <DropdownMenu open={open} onOpenChange={setOpen}>
                 <DropdownMenuTrigger asChild>

@@ -12,19 +12,22 @@ export async function Category({ data }) {
     })
 
     const items = await Promise.all(parts.items.map(async (data) => {
-        data.categoryName = (await pb.collection('category').getOne("1b2810492fjfjw5")).name
+        data.partName = (await pb.collection('part').getOne(data.part)).name
         return <Part data={data} />
     }))
 
     return (
-        <div className={`flex w-full flex-col items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center`}>
-            <p className="text-sm font-medium leading-none">
-                <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
-                    Category
-                </span>
-                <span className="text-muted-foreground">{data.categoryName}</span>
-            </p>
-            <DropdownMenuSection />
-        </div>
+        <>
+            <div className={`flex w-full flex-col items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center`}>
+                <p className="text-sm font-medium leading-none">
+                    <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
+                        Category
+                    </span>
+                    <span className="text-muted-foreground">{data.categoryName}</span>
+                </p>
+                <DropdownMenuSection />
+            </div>
+            {items}
+        </>
     )
 }
