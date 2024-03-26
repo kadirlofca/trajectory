@@ -27,7 +27,6 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-// Import client components
 import { AddPartDropdown } from "./AddPartDropdown"
 import { MarkAsComplete } from "./MarkAsComplete";
 
