@@ -60,11 +60,6 @@ export function Category() {
                 <DropdownMenuContent align="end" className="w-[200px]">
                     <DropdownMenuLabel>Actions</DropdownMenuLabel>
                     <DropdownMenuGroup>
-                        <Link href="/addpart">
-                            <DropdownMenuItem>
-                                Part Page
-                            </DropdownMenuItem>
-                        </Link>
                         <DropdownMenuSub>
                             <DropdownMenuSubTrigger>
                                 + Add a Part

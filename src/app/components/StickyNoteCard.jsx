@@ -71,7 +71,7 @@ export const CardWithForm_StickyNote = ({ projectData }) => {
                         <div className="pt-5">
                             <Button>Edit</Button></div>
                     </PopoverTrigger>
-                    <PopoverContent>
+                    <PopoverContent sideOffset={-188}>
                         <div>
                             <h4 className="font-medium text-center leading-none">Edit Project</h4>
                         </div>
