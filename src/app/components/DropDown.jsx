@@ -1,108 +1,71 @@
-"use client"
+
 
 import * as React from "react"
-import { useMediaQuery } from "@/hook/use-media-query"
+import { MoreHorizontal, Tags, Trash } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {
-    Command,
-    CommandEmpty,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
-} from "@/components/ui/command"
-import {
-    Drawer,
-    DrawerContent,
-    DrawerTrigger,
-} from "@/components/ui/drawer"
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-} from "@/components/ui/popover"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
 
-const Status = {
-    value: 'string',
-    label: 'string'
-}
-
-const statuses = [
-    {
-        value: "----",
-        label: "----",
-    },
-    {
-        value: "----",
-        label: "----",
-    },
-    {
-        value: "----",
-        label: "----",
-    }
+const labels = [
+    "----",
+    "----",
+    "----"
 ]
 
-export function ComboBoxResponsive() {
-    const [open, setOpen] = React.useState(false)
-    const isDesktop = useMediaQuery("(min-width: 768px)")
-    const [selectedStatus, setSelectedStatus] = React.useState(
-        null
-    )
-
-    if (isDesktop) {
-        return (
-            <Popover open={open} onOpenChange={setOpen}>
-                <PopoverTrigger asChild>
-                    <Button variant="outline" className="w-[150px] justify-start">
-                        {selectedStatus ? <>{selectedStatus.label}</> : <>+ Add Category</>}
-                    </Button>
-                </PopoverTrigger>
-                <PopoverContent className="w-[200px] p-0" align="start">
-                    <StatusList setOpen={setOpen} setSelectedStatus={setSelectedStatus} />
-                </PopoverContent>
-            </Popover>
-        )
-    }
-
+export function DropdownMenuSection({ open, setOpen, setLabel, handleMarkAsComplete }) {
     return (
-        <Drawer open={open} onOpenChange={setOpen}>
-            <DrawerTrigger asChild>
-                <Button variant="outline" className="w-[150px] justify-start">
-                    {selectedStatus ? <>{selectedStatus.label}</> : <>+ Add Category</>}
+        <DropdownMenu open={open} onOpenChange={setOpen}>
+            <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm">
+                    <MoreHorizontal />
                 </Button>
-            </DrawerTrigger>
-            <DrawerContent>
-                <div className="mt-4 border-t">
-                    <StatusList setOpen={setOpen} setSelectedStatus={setSelectedStatus} />
-                </div>
-            </DrawerContent>
-        </Drawer>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-[200px]">
+                <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                <DropdownMenuGroup>
+                    <DropdownMenuSub>
+                        <DropdownMenuSubTrigger>
+                            + Add a Part
+                        </DropdownMenuSubTrigger>
+                        <DropdownMenuSubContent className="p-0">
+                            <Command>
+                                <CommandInput
+                                    placeholder="Search Parts"
+                                    autoFocus={true}
+                                />
+                                <CommandList>
+                                    <CommandEmpty>No label found.</CommandEmpty>
+                                    <CommandGroup>
+                                        {labels.map((label) => (
+                                            <CommandItem
+                                                key={label}
+                                                value={label}
+                                                onSelect={(value) => {
+                                                    setLabel(value)
+                                                    setOpen(false)
+                                                }}
+                                            >
+                                                {label}
+                                            </CommandItem>
+                                        ))}
+                                    </CommandGroup>
+                                </CommandList>
+                            </Command>
+                        </DropdownMenuSubContent>
+                    </DropdownMenuSub>
+                    <DropdownMenuSub>
+                        <DropdownMenuSubTrigger onClick={handleMarkAsComplete}>
+                            <Tags className="mr-2 h-4 w-4" />
+                            Mark as Complete
+                        </DropdownMenuSubTrigger>
+                    </DropdownMenuSub>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem className="text-red-600">
+                        <Trash className="mr-2 h-4 w-4" />
+                        Delete
+                    </DropdownMenuItem>
+                </DropdownMenuGroup>
+            </DropdownMenuContent>
+        </DropdownMenu>
     )
-}
-
-function StatusList({ setOpen, setSelectedStatus }) {
-    return (
-        <Command>
-            <CommandInput placeholder="Search Categories" />
-            <CommandList>
-                <CommandEmpty>No results found.</CommandEmpty>
-                <CommandGroup>
-                    {statuses.map((status) => (
-                        <CommandItem
-                            key={status.value}
-                            value={status.value}
-                            onSelect={(value) => {
-                                setSelectedStatus(
-                                    statuses.find((priority) => priority.value === value) || null
-                                );
-                                setOpen(false);
-                            }}
-                        >
-                            {status.label}
-                        </CommandItem>
-                    ))}
-                </CommandGroup>
-            </CommandList>
-        </Command>
-    );
 }
