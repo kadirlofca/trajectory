@@ -17,16 +17,18 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-
 export function CategoryButton({ projectID, categoryData }) {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  
+  const handleCategoryClick = (categoryId) => {
+    addCategory(categoryId, projectID);
+  }
 
   return (
     <Popover>
       <PopoverTrigger>
         <div className="pt-5">
-          <Button>Add New Category +</Button></div>
+          <Button>Add New Category +</Button>
+        </div>
       </PopoverTrigger>
       <PopoverContent className="w-[350px] p-0">
         <Command>
@@ -35,24 +37,20 @@ export function CategoryButton({ projectID, categoryData }) {
             autoFocus={true}
           />
           <CommandList>
-            <CommandEmpty>No label found.</CommandEmpty>
             <CommandGroup>
               {categoryData.map((data) => (
-                <CommandItem
+                <div
                   key={data.id}
-                  value={data.id}
-                  onSelect={(value) => {
-                    addCategory(value, projectID)
-                  }}
+                  onClick={() => handleCategoryClick(data.id)}
+                  className="cursor-pointer border-b border-gray-200 p-2 hover:bg-gray-100"
                 >
                   {data.name}
-                </CommandItem>
+                </div>
               ))}
             </CommandGroup>
           </CommandList>
         </Command>
       </PopoverContent>
     </Popover>
-
   )
 }
