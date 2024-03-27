@@ -70,9 +70,7 @@ export function DropdownMenuSection({ data }) {
                         </DropdownMenuSubTrigger>
                     </DropdownMenuSub>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => { console.log("hello") }} className="text-red-600">
-                        <Trash className="mr-2 h-4 w-4" />
-                        <button onClick={() => { deleteProject(projectData) }}><Button variant="outline">Delete</Button></button>
+                    <DropdownMenuItem onClick={() => { deleteCategory(data.id) }} className="text-red-600">
                         Delete
                     </DropdownMenuItem>
                 </DropdownMenuGroup>

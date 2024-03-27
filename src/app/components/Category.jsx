@@ -25,7 +25,7 @@ export async function Category({ data }) {
                     </span>
                     <span className="text-muted-foreground">{data.categoryName}</span>
                 </p>
-                <DropdownMenuSection />
+                <DropdownMenuSection data={data} />
             </div>
             {items}
         </>
