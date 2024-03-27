@@ -1,5 +1,3 @@
-'use server'
-
 import Link from "next/link";
 import PocketBase from "pocketbase";
 import { CategoryButton } from "@/app/components/CategoryButton";
@@ -37,6 +35,11 @@ export default async function Page({ params }) {
         </div>
       </div>
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
+        <div className="w-full flex justify-center mb-4">
+          <Link href="/" passHref>
+            <span className="text-blue-500 text-lg cursor-pointer bg-yellow-500 px-4 py-2 rounded-full">Home</span>
+          </Link>
+        </div>
         <CategoryButton />
         {items}
       </div>
