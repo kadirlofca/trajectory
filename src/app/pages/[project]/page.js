@@ -37,7 +37,7 @@ export default async function Page({ params }) {
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
         <div className="w-full flex justify-center mb-4">
           <Link href="/" passHref>
-            <span className="text-blue-500 text-lg cursor-pointer bg-yellow-500 px-4 py-2 rounded-full">Home</span>
+            <span className="text-white bg-yellow-500 px-4 py-2 rounded-full cursor-pointer hover:bg-yellow-600">Home</span>
           </Link>
         </div>
         <CategoryButton />
