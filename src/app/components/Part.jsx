@@ -51,6 +51,7 @@ export function Part({ data }) {
                 </span>
                 <span className="text-muted-foreground">{data.partName}</span>
             </p>
+            {/*<DropdownMenuPart> is in DropDownPart.jsx. It includes everything below this.*/}
             <DropdownMenu open={open} onOpenChange={setOpen}>
                 <DropdownMenuTrigger asChild>
                     <Button variant="ghost" size="sm">
