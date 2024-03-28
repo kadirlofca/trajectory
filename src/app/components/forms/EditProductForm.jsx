@@ -20,6 +20,7 @@ import {
     Card,
     CardContent,
 } from "@/components/ui/card"
+import updateProduct from "@/app/actions/item/updateProduct"
 
 const formSchema = z.object({
     name: z.string(),
@@ -27,7 +28,7 @@ const formSchema = z.object({
     budget: z.string().optional()
 })
 
-export function EditProductForm({ partID }) {
+export function EditProductForm({ productID }) {
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -38,7 +39,7 @@ export function EditProductForm({ partID }) {
     })
 
     const onSubmit = (values) => {
-        addProduct(partID, values)
+        updateProduct(productID, values)
     }
 
     const [label, setLabel] = React.useState("category")

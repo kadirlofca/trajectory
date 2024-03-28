@@ -42,7 +42,7 @@ export function ProductMenu({ productID }) {
                             Edit
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent>
-                            <EditProductForm />
+                            <EditProductForm productID={productID} />
                         </DropdownMenuSubContent>
                     </DropdownMenuSub>
                     {/* <DropdownMenuItem>
