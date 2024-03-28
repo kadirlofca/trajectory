@@ -24,8 +24,8 @@ export default async function Projects() {
         </div>
       </div>
 
-      <footer className="bg-gray-400 border-t mt-40 border-gray-400">
-      <div className="flex flex-wrap justify-center gap-12 max-w-screen-lg mx-auto mb-4 py-4 pl-8">
+      <footer className="border-t mt-8">
+      <div className="text-gray-400 flex flex-wrap justify-center gap-12 max-w-screen-lg mx-auto py-4 pl-8">
         <div className="max-w-[29%]">
           Trajectory helps you organize and keep track of your car projects.
         </div>
