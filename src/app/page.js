@@ -16,7 +16,7 @@ export default async function Projects() {
   return (
     <div>
       <div className="w-full h-full">
-        <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
+        <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg mt-4">
           <AddProjectForm />
         </div>
         <div className="flex flex-wrap justify-center pt-5 mb-4 mx-auto max-w-screen-lg">
