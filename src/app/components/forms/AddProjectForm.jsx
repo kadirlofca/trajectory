@@ -77,7 +77,7 @@ export function AddProjectForm() {
                                         <FormItem>
                                             <FormLabel>Year</FormLabel>
                                             <FormControl>
-                                                <Input placeholder={"1950-" + new Date().getFullYear()} {...field} />
+                                                <Input placeholder={"1990-" + new Date().getFullYear()} {...field} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>
