@@ -69,7 +69,7 @@ export const Project = ({ projectData }) => {
                 <button onClick={() => { deleteProject(projectData) }}><Button variant="outline">Delete</Button></button>
                 <Popover>
                     <PopoverTrigger>
-                        <div className="pt-5">
+                        <div>
                             <Button>Edit</Button></div>
                     </PopoverTrigger>
                     <PopoverContent sideOffset={-188}>
