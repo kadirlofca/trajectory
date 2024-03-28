@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import PocketBase from 'pocketbase';
 import { Calendar, MoreHorizontal, Tags, Trash, User } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -26,7 +25,7 @@ import {
     DropdownMenuSubTrigger,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { AddProductForm } from "../forms/AddProductForm"
+import { PartMenu } from "../menus/PartMenu"
 import deletePart from "../../actions/deletePart";
 
 const labels = [
@@ -63,7 +62,7 @@ export function Part({ data }) {
                                 + Add a Product
                             </DropdownMenuSubTrigger>
                             <DropdownMenuSubContent className="p-0">
-                                <AddProductForm />
+                                <PartMenu />
                             </DropdownMenuSubContent>
                         </DropdownMenuSub>
                         {/* <DropdownMenuSub>

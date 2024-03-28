@@ -19,7 +19,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 
-export function AddProductForm() {
+export function PartMenu() {
     return (
         <Card className="w-[350px]">
             <CardHeader>
