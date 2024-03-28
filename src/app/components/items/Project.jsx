@@ -58,6 +58,7 @@ export const Project = ({ projectData }) => {
                     <CardTitle>{projectData.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
+                    <p>{projectData.year} {projectData.make} {projectData.model}</p>
                     <p>Budget: {projectData.budget}</p>
                     <p>Shopping Cart: not implemented</p>
                     <p>Total Spent: not implemented</p>
