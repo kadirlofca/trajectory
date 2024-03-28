@@ -48,7 +48,8 @@ export function AddProjectForm() {
                 <Popover>
                     <PopoverTrigger>
                         <div className="pt-5">
-                            <Button>Add New Project</Button></div>
+                            <Button>Add New Project</Button>
+                        </div>
                     </PopoverTrigger>
                     <PopoverContent>
                         <div>
