@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import deleteProject from "../../actions/deleteProject"
-import updateProject from "../../actions/updateProject"
+import deleteProject from "../../actions/project/deleteProject"
+import updateProject from "../../actions/project/updateProject"
 import {
     Card,
     CardContent,

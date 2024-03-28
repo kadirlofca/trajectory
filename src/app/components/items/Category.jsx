@@ -4,7 +4,7 @@ import * as React from "react"
 import PocketBase from "pocketbase";
 import { CategoryMenu } from "../menus/CategoryMenu";
 import { Part } from "./Part";
-import getPart from "../../actions/getPart";
+import getPart from "../../actions/utilities/getPart";
 
 export async function Category({ categoryData, projectID }) {
     const pb = new PocketBase("http://127.0.0.1:8090")

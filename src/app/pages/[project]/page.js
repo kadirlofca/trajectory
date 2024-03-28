@@ -1,6 +1,6 @@
 import Link from "next/link";
 import PocketBase from "pocketbase";
-import getCategories from "@/app/actions/getCategories";
+import getCategories from "@/app/actions/utilities/getCategories";
 import { AddCategoryForm } from "@/app/components/forms/AddCategoryForm";
 import { Category } from "@/app/components/items/Category";
 

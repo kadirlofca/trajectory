@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import addCategory from "../../actions/addCategory"
+import addCategory from "../../actions/item/addCategory"
 import { Button } from "@/components/ui/button"
 import {
   Command,

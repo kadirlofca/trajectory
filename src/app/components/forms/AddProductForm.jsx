@@ -4,7 +4,7 @@ import * as React from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import addProduct from "@/app/actions/addProduct"
+import addProduct from "@/app/actions/item/addProduct"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -38,7 +38,6 @@ export function AddProductForm({ partID }) {
     })
 
     const onSubmit = (values) => {
-        console.log(values)
         addProduct(partID, values)
     }
 

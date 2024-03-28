@@ -4,7 +4,7 @@ import * as React from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
-import createProject from "../../actions/createProject"
+import createProject from "../../actions/project/createProject"
 
 import { Button } from "@/components/ui/button"
 import {

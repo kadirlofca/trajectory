@@ -1,12 +1,12 @@
 'use client'
 
 import * as React from "react"
-import deleteCategory from "../../actions/deleteCategory"
+import deleteCategory from "../../actions/item/deleteCategory"
 import { MoreHorizontal, Tags, Trash } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import addPart from "../../actions/addPart"
+import addPart from "../../actions/item/addPart"
 
 export function CategoryMenu({ projectID, categoryID, partData }) {
     const [label, setLabel] = React.useState("category")

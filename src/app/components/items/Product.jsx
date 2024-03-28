@@ -1,19 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { MoreHorizontal, Trash } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuGroup,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
+import { ProductMenu } from "../menus/ProductMenu"
 
 export function Product({ productData }) {
     const [open, setOpen] = React.useState(false)
@@ -26,33 +14,7 @@ export function Product({ productData }) {
                 </span>
                 <span className="text-muted-foreground">${productData.budget} - {productData.title} - {productData.text}</span>
             </p>
-            {/*<DropdownMenuProduct> is in DropDownProduct.jsx. It includes everything below this.*/}
-            <DropdownMenu open={open} onOpenChange={setOpen}>
-                <DropdownMenuTrigger asChild>
-                    <Button variant="ghost" size="sm">
-                        <MoreHorizontal />
-                    </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-[200px]">
-                    <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                    <DropdownMenuGroup>
-                        <DropdownMenuItem>
-                            Edit
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            Select Product
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            Mark As Bought
-                        </DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem className="text-red-600">
-                            <Trash className="mr-2 h-4 w-4" />
-                            Delete
-                        </DropdownMenuItem>
-                    </DropdownMenuGroup>
-                </DropdownMenuContent>
-            </DropdownMenu>
+            <ProductMenu productID={productData.id} />
         </div>
     )
 }
