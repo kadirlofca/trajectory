@@ -7,6 +7,15 @@ import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 export function ProductMenu({ productID }) {
+    const [label, setLabel] = React.useState("category")
+    const [open, setOpen] = React.useState(false)
+    const [isCompleted, setIsCompleted] = React.useState(false);
+
+    const handleMarkAsComplete = () => {
+        setIsCompleted(true);
+        setOpen(false);
+    }
+
     return (
         <DropdownMenu open={open} onOpenChange={setOpen}>
             <DropdownMenuTrigger asChild>
