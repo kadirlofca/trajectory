@@ -1,8 +1,8 @@
 import Link from "next/link";
 import PocketBase from "pocketbase";
 import getCategories from "@/app/actions/getCategories";
-import { CategoryButton } from "@/app/components/CategoryButton";
-import { Category } from "@/app/components/Category";
+import { AddCategoryForm } from "@/app/components/forms/AddCategoryForm";
+import { Category } from "@/app/components/items/Category";
 
 export default async function Page({ params }) {
   const projectID = params.project
@@ -41,7 +41,7 @@ export default async function Page({ params }) {
             <span className="text-white bg-yellow-500 px-4 py-2 rounded-full cursor-pointer hover:bg-yellow-600">Home</span>
           </Link>
         </div>
-        <CategoryButton projectID={projectID} categoryData={await getCategories()} />
+        <AddCategoryForm projectID={projectID} categoryData={await getCategories()} />
         {items}
       </div>
     </>
