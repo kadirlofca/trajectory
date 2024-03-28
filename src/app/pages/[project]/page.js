@@ -22,12 +22,13 @@ export default async function Page({ params }) {
       <div>
         <div className="flex flex-wrap justify-center gap-12 max-w-screen-lg mx-auto mb-4 py-4 pl-8 border-b-2 border-gray-400 bg-gray-400">
           <div className="max-w-[29%]">
-            <Link href="/">
-              Trajectory helps you organize and keep track of your car projects.
+            <Link href="/" passHref>
+              <span className="text-black bg-yellow-500 px-4 py-2 rounded-full cursor-pointer hover:bg-yellow-600">Home</span>
             </Link>
           </div>
 
           <div className="max-w-[29%]">
+            Trajectory helps you organize and keep track of your car projects.
             JavaScript - React - Nextjs - Tauri - HTML & CSS - Tailwind
           </div>
           <div className="max-w-[29%]">
@@ -36,11 +37,6 @@ export default async function Page({ params }) {
         </div>
       </div>
       <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
-        <div className="w-full flex justify-center mb-4">
-          <Link href="/" passHref>
-            <span className="text-white bg-yellow-500 px-4 py-2 rounded-full cursor-pointer hover:bg-yellow-600">Home</span>
-          </Link>
-        </div>
         <AddCategoryForm projectID={projectID} categoryData={await getCategories()} />
         {items}
       </div>
