@@ -18,7 +18,7 @@ export function Product({ productData }) {
                         <span className="text-muted-foreground">{productData.title}</span>
                     </PopoverTrigger>
                 </p>
-                <PopoverContent align="end" className="w-[200px]">
+                <PopoverContent align="end" className="w-[450px]">
                     <div className="p-4">
                         <h2><strong>{productData.title}</strong></h2>
                         <p>Budget: ${productData.budget}</p>
