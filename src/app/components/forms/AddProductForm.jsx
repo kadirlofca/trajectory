@@ -1,57 +1,98 @@
+'use client'
+
 import * as React from "react"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import addProduct from "@/app/actions/addProduct"
 
 import { Button } from "@/components/ui/button"
 import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import {
     Card,
     CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-} from "@/components/ui/select"
 
-export function PartMenu() {
+const formSchema = z.object({
+    name: z.string(),
+    text: z.string(),
+    budget: z.string().optional()
+})
+
+export function AddProductForm({ partID }) {
+    const form = useForm({
+        resolver: zodResolver(formSchema),
+        defaultValues: {
+            name: "",
+            text: "",
+            budget: "0"
+        }
+    })
+
+    const onSubmit = (values) => {
+        console.log(values)
+        addProduct(partID, values)
+    }
+
     return (
-        <Card className="w-[350px]">
-            <CardHeader>
-                <CardTitle>Add a Product</CardTitle>
-                <CardDescription>Add a direct link to a specific part.</CardDescription>
-            </CardHeader>
+        <Card>
             <CardContent>
                 <div>
-                    <form>
-                        <div className="grid w-full items-center gap-4">
-                            <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="name">Name</Label>
-                                <Input id="name_product" placeholder="Name of product" />
-                            </div>
-                            <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="link">Link</Label>
-                                <Input id="product_link" placeholder="Link to Product" />
-                            </div>
-                            <div className="flex flex-col space-y-1.5">
-                                <Label htmlFor="link">Price</Label>
-                                <Input id="product_price" placeholder="Price of Product" />
-                            </div>
-                        </div>
+                    <h4 className="font-medium text-center leading-none my-4">New Product</h4>
+                </div>
+                <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
+                        <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Title</FormLabel>
+                                    <FormControl>
+                                        <Input placeholder="Title" {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="text"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Text</FormLabel>
+                                    <FormControl>
+                                        <Input type="text" {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <FormField
+                            control={form.control}
+                            name="budget"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Budget</FormLabel>
+                                    <FormControl>
+                                        <Input type="text"  {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <Button type="submit">Submit</Button>
                     </form>
-                </div>
+                </Form>
             </CardContent>
-            <CardFooter className="flex justify-between">
-                <div>
-                    <Button variant="outline">Cancel</Button>
-                    <Button>Add</Button>
-                </div>
-            </CardFooter>
         </Card>
     )
 }

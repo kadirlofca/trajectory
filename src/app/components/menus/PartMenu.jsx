@@ -14,7 +14,7 @@ const labels = [
     "----"
 ]
 
-export function PartMenu({ data }) {
+export function PartMenu({ partID }) {
     const [label, setLabel] = React.useState("category")
     const [open, setOpen] = React.useState(false)
     const [isCompleted, setIsCompleted] = React.useState(false);
@@ -40,46 +40,7 @@ export function PartMenu({ data }) {
                             + Add a Product
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="p-0">
-                            <AddProductForm />
-                        </DropdownMenuSubContent>
-                    </DropdownMenuSub>
-                    <DropdownMenuSub>
-                        <DropdownMenuSubTrigger>
-                            + Add a How-To
-                        </DropdownMenuSubTrigger>
-                        <DropdownMenuSubContent className="p-0">
-                            <CardWithForm_HowTo />
-                        </DropdownMenuSubContent>
-                    </DropdownMenuSub>
-                    <DropdownMenuSub>
-                        <DropdownMenuSubTrigger>
-                            <Tags className="mr-2 h-4 w-4" />
-                            Mark as Complete
-                        </DropdownMenuSubTrigger>
-                        <DropdownMenuSubContent className="p-0">
-                            <Command>
-                                <CommandInput
-                                    placeholder="Filter label..."
-                                    autoFocus={true}
-                                />
-                                <CommandList>
-                                    <CommandEmpty>No label found.</CommandEmpty>
-                                    <CommandGroup>
-                                        {labels.map((label) => (
-                                            <CommandItem
-                                                key={label}
-                                                value={label}
-                                                onSelect={(value) => {
-                                                    setLabel(value)
-                                                    setOpen(false)
-                                                }}
-                                            >
-                                                {label}
-                                            </CommandItem>
-                                        ))}
-                                    </CommandGroup>
-                                </CommandList>
-                            </Command>
+                            <AddProductForm partID={partID} />
                         </DropdownMenuSubContent>
                     </DropdownMenuSub>
                     <DropdownMenuSeparator />

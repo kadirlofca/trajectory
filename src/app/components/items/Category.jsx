@@ -6,15 +6,15 @@ import { CategoryMenu } from "../menus/CategoryMenu";
 import { Part } from "./Part";
 import getPart from "../../actions/getPart";
 
-export async function Category({ data, projectID }) {
+export async function Category({ categoryData, projectID }) {
     const pb = new PocketBase("http://127.0.0.1:8090")
     const parts = await pb.collection('project_part').getList(0, 99, {
-        filter: 'category="' + data.id + '"'
+        filter: 'category="' + categoryData.id + '"'
     })
 
     const items = await Promise.all(parts.items.map(async (data) => {
         data.partName = (await pb.collection('part').getOne(data.part)).name
-        return <Part data={data} />
+        return <Part partData={data} categoryID={categoryData.id} projectID={projectID} />
     }))
 
     return (
@@ -24,9 +24,9 @@ export async function Category({ data, projectID }) {
                     <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
                         Category
                     </span>
-                    <span className="text-muted-foreground">{data.categoryName}</span>
+                    <span className="text-muted-foreground">{categoryData.categoryName}</span>
                 </p>
-                <CategoryMenu partData={await getPart(data.category)} projectID={projectID} categoryID={data.id} />
+                <CategoryMenu partData={await getPart(categoryData.category)} projectID={projectID} categoryID={categoryData.id} />
             </div>
             {items}
         </>
