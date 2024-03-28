@@ -2,10 +2,11 @@
 
 import * as React from "react"
 import PocketBase from "pocketbase";
-import { DropdownMenuSection } from "./DropDown"
+import { CategoryDropdownMenu } from "./CategoryDropdown";
 import { Part } from "./Part";
+import getPart from "../actions/getPart";
 
-export async function Category({ data }) {
+export async function Category({ data, projectID }) {
     const pb = new PocketBase("http://127.0.0.1:8090")
     const parts = await pb.collection('project_part').getList(0, 99, {
         filter: 'category="' + data.id + '"'
@@ -25,7 +26,7 @@ export async function Category({ data }) {
                     </span>
                     <span className="text-muted-foreground">{data.categoryName}</span>
                 </p>
-                <DropdownMenuSection data={data} />
+                <CategoryDropdownMenu partData={await getPart(data.category)} projectID={projectID} categoryID={data.id} />
             </div>
             {items}
         </>

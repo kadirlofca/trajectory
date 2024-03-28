@@ -14,7 +14,7 @@ export default async function Page({ params }) {
 
   const items = await Promise.all(projectCategories.items.map(async (data) => {
     data.categoryName = (await pb.collection('category').getOne(data.category)).name
-    return <Category data={data} />
+    return <Category data={data} projectID={projectID} />
   }))
 
   return (

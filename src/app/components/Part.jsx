@@ -30,6 +30,7 @@ import { Input } from "@/components/ui/input"
 import { CardWithForm, CardWithForm_HowTo } from "./HowToInput"
 import { CardWithForm_Product } from "./AddingProduct"
 import { Product } from "./Product";
+import deletePart from "../actions/deletePart";
 
 const labels = [
     "----",
@@ -110,8 +111,7 @@ export function Part({ data }) {
                             </DropdownMenuSubContent>
                         </DropdownMenuSub>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem className="text-red-600">
-                            <Trash className="mr-2 h-4 w-4" />
+                        <DropdownMenuItem onClick={() => { deletePart(data.id) }} className="text-red-600">
                             Delete
                         </DropdownMenuItem>
                     </DropdownMenuGroup>

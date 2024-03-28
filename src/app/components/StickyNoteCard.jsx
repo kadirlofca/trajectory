@@ -48,7 +48,7 @@ export const CardWithForm_StickyNote = ({ projectData }) => {
     })
 
     const onSubmit = (values) => {
-        createProject(values)
+        updateProject(values, projectData.id)
     }
 
     return (

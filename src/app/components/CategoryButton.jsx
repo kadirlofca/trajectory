@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/popover"
 
 export function CategoryButton({ projectID, categoryData }) {
-  
+
   const handleCategoryClick = (categoryId) => {
     addCategory(categoryId, projectID);
   }
