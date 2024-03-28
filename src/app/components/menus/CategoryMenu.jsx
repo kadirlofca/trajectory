@@ -58,12 +58,12 @@ export function CategoryMenu({ projectID, categoryID, partData }) {
                             </Command>
                         </DropdownMenuSubContent>
                     </DropdownMenuSub>
-                    <DropdownMenuSub>
+                    {/* <DropdownMenuSub>
                         <DropdownMenuSubTrigger onClick={handleMarkAsComplete}>
                             <Tags className="mr-2 h-4 w-4" />
                             Mark as Complete
                         </DropdownMenuSubTrigger>
-                    </DropdownMenuSub>
+                    </DropdownMenuSub> */}
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={() => { deleteCategory(categoryID) }} className="text-red-600">
                         Delete

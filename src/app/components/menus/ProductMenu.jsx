@@ -29,9 +29,9 @@ export function ProductMenu({ productID }) {
                     <DropdownMenuItem>
                         Edit
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
+                    {/* <DropdownMenuItem>
                         Select Product
-                    </DropdownMenuItem>
+                    </DropdownMenuItem> */}
                     <DropdownMenuItem>
                         Mark As Bought
                     </DropdownMenuItem>
