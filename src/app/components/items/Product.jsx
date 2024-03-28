@@ -21,7 +21,7 @@ export function Product({ productData }) {
                 <PopoverContent align="end" className="w-[450px]">
                     <div className="p-4">
                         <h2><strong>{productData.title}</strong></h2>
-                        <p><span className="text-decoration-line: underline">Budget:</span> ${productData.budget}</p>
+                        <p><span className="text-decoration-line: underline">Price:</span> ${productData.budget}</p>
                         <p><span className="text-decoration-line: underline">Description:</span> {productData.text}</p>
                     </div>
                 </PopoverContent>
