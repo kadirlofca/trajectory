@@ -22,6 +22,14 @@ import {
 } from "@/components/ui/card"
 import updateProduct from "@/app/actions/item/updateProduct"
 
+// Function to format currency
+const formattedCurrency = (amount, currency = 'USD') => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: currency
+    }).format(amount);
+  }
+
 const formSchema = z.object({
     name: z.string(),
     text: z.string(),
@@ -87,7 +95,7 @@ export function EditProductForm({ productID }) {
                                 <FormItem>
                                     <FormLabel>Budget</FormLabel>
                                     <FormControl>
-                                        <Input type="text"  {...field} />
+                                        <Input placeholder={formattedCurrency(0)} {...field}/>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>

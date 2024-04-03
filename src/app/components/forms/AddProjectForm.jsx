@@ -51,7 +51,7 @@ export function AddProjectForm() {
     }
 
     return (
-        <Card>
+        <Card className="bg-gray-300">
             <CardContent>
                 <Popover>
                     <PopoverTrigger>

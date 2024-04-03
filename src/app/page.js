@@ -16,10 +16,10 @@ export default async function Projects() {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center gap-20 max-w-screen-lg mx-auto mb-6 py-1 pl-3 border-b-4 border-yellow-500 bg-gray-400">
-        <div className="max-w-[29%]">
+      <div className="flex flex-wrap justify-center gap-20 max-w-screen-lg mx-auto mb-6 py-1 pl-3 border-b-4 border-yellow-500 bg-gray-300">
+        <div className="content-center max-w-[29%]">
           <Link href="/" passHref>
-            <Home className="content-center h-10 w-10" />
+            <Home className="h-9 w-9" />
           </Link>
         </div>
         <div className="content-center max-w-[29%]">

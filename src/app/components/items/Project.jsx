@@ -60,21 +60,21 @@ export const Project = ({ projectData }) => {
     }
 
     return (
-        <Card className="w-[350px] ml-4 mb-4 hover:cursor-pointer">
+        <Card className="bg-gray-300 w-[350px] ml-4 mb-4 hover:cursor-pointer">
             <Link href={"/pages/" + projectData.id}>
                 <CardHeader>
                     <CardTitle>{projectData.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
                     <p>{projectData.year} {projectData.make} {projectData.model}</p>
-                    <p>Budget: {formattedCurrency(projectData.budget)}</p> {/* Update this line */}
+                    <p>Budget: {formattedCurrency(projectData.budget)}</p>
                     <p>Shopping Cart: not implemented</p>
                     <p>Total Spent: not implemented</p>
                 </CardContent>
             </Link>
 
             <CardFooter className="flex justify-between">
-                <button onClick={() => { deleteProject(projectData) }}><Button variant="outline">Delete</Button></button>
+                <button onClick={() => { deleteProject(projectData) }}><Button variant="destructive">Delete</Button></button>
                 <Popover>
                     <PopoverTrigger>
                         <div>

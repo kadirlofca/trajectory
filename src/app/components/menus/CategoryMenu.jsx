@@ -22,7 +22,7 @@ export function CategoryMenu({ projectID, categoryID, partData, completed, onMar
     console.log("Completed:", completed); // Debugging statement
 
     return (
-        <DropdownMenu className={completed ? 'bg-green-200' : ''}>
+        <DropdownMenu className={"bg-yellow-200"}>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm">
                     <MoreHorizontal />
