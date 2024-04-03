@@ -22,6 +22,14 @@ import {
 } from "@/components/ui/card"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
+// Function to format currency
+const formattedCurrency = (amount, currency = 'USD') => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: currency
+  }).format(amount);
+}
+
 const formSchema = z.object({
     name: z.string(),
     year: z.string(),
@@ -116,7 +124,7 @@ export function AddProjectForm() {
                                         <FormItem>
                                             <FormLabel>Budget</FormLabel>
                                             <FormControl>
-                                                <Input placeholder={0} {...field} />
+                                                <Input placeholder={formattedCurrency(0)} {...field} />
                                             </FormControl>
                                             <FormMessage />
                                         </FormItem>

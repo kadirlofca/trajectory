@@ -27,6 +27,14 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 
+// Function to format currency
+const formattedCurrency = (amount, currency = 'USD') => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: currency
+    }).format(amount);
+  }
+
 const formSchema = z.object({
     name: z.string(),
     year: z.string(),
@@ -59,7 +67,7 @@ export const Project = ({ projectData }) => {
                 </CardHeader>
                 <CardContent>
                     <p>{projectData.year} {projectData.make} {projectData.model}</p>
-                    <p>Budget: {projectData.budget}</p>
+                    <p>Budget: {formattedCurrency(projectData.budget)}</p> {/* Update this line */}
                     <p>Shopping Cart: not implemented</p>
                     <p>Total Spent: not implemented</p>
                 </CardContent>

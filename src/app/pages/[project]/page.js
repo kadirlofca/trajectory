@@ -32,16 +32,16 @@ export default async function Page({ params }) {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center gap-20 max-w-screen-lg mx-auto mb-4 py-1 pl-3 border-b-2 border-gray-400 bg-gray-400">
+      <div className="flex flex-wrap justify-center gap-20 max-w-screen-lg mx-auto mb-2 py-1 pl-3 border-b-4 border-yellow-500 bg-gray-400">
         <div className="max-w-[29%]">
           <Link href="/" passHref>
-            <Home className="mt-3 mr-5 h-10 w-10" />
+            <Home className="content-center h-10 w-10" />
           </Link>
         </div>
-        <div className="max-w-[29%]">
+        <div className="content-center max-w-[29%]">
           Trajectory helps you organize and keep track of your car projects.
         </div>
-        <div className="max-w-[29%]">
+        <div className="content-center max-w-[29%]">
           Kadir Lofca - Kennedy Ninh - Hayden Perusek
         </div>
       </div>
@@ -57,7 +57,7 @@ export default async function Page({ params }) {
       </div>
 
       <div>
-        <footer className="border-t mt-8">
+        <footer className="border-t mt-60">
           <div className="text-gray-400 flex flex-wrap justify-center gap-12 max-w-screen-lg mx-auto py-4 pl-8">
             <div className="max-w-[29%]">Trajectory</div>
           </div>
