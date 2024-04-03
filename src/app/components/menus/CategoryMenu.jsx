@@ -1,31 +1,28 @@
 'use client'
+// CategoryMenu.jsx
 
-import * as React from "react"
-import deleteCategory from "../../actions/item/deleteCategory"
-import { MoreHorizontal, Tags, Trash } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@/components/ui/command"
-import addPart from "../../actions/item/addPart"
+import * as React from "react";
+import deleteCategory from "../../actions/item/deleteCategory";
+import { MoreHorizontal } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Command, CommandInput, CommandList, CommandGroup } from "@/components/ui/command";
+import addPart from "../../actions/item/addPart";
 
-export function CategoryMenu({ projectID, categoryID, partData }) {
-    const [label, setLabel] = React.useState("category")
-    const [open, setOpen] = React.useState(false)
-    const [completed, setCompleted] = React.useState(false);
-
+export function CategoryMenu({ projectID, categoryID, partData, completed, onMarkAsComplete }) {
     const handlePartClick = (partId) => {
         addPart(partId, categoryID, projectID);
     }
 
     const handleMarkAsComplete = () => {
-        setCompleted(true);
-        setOpen(false);
+        console.log("Mark as Complete clicked"); // Debugging statement
+        onMarkAsComplete(); // Call the parent function to update completion status
     }
 
-    
+    console.log("Completed:", completed); // Debugging statement
 
     return (
-        <DropdownMenu open={open} onOpenChange={setOpen} className={completed ? 'bg-green-200' : ''}>
+        <DropdownMenu className={completed ? 'bg-green-200' : ''}>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm">
                     <MoreHorizontal />
@@ -60,8 +57,7 @@ export function CategoryMenu({ projectID, categoryID, partData }) {
                             </Command>
                         </DropdownMenuSubContent>
                     </DropdownMenuSub>
-                        <DropdownMenuItem onClick={handleMarkAsComplete}>
-                            <Tags className="mr-2 h-4 w-4" />
+                        <DropdownMenuItem onClick={onMarkAsComplete}>
                             Mark as Complete
                         </DropdownMenuItem>
                     <DropdownMenuSeparator />
@@ -71,5 +67,5 @@ export function CategoryMenu({ projectID, categoryID, partData }) {
                 </DropdownMenuGroup>
             </DropdownMenuContent>
         </DropdownMenu>
-    )
+    );
 }

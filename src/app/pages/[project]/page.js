@@ -32,10 +32,10 @@ export default async function Page({ params }) {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center gap-20 max-w-screen-lg mx-auto mb-4 py-4 pl-8 border-b-2 border-gray-400 bg-gray-400">
+      <div className="flex flex-wrap justify-center gap-20 max-w-screen-lg mx-auto mb-4 py-1 pl-3 border-b-2 border-gray-400 bg-gray-400">
         <div className="max-w-[29%]">
           <Link href="/" passHref>
-            <Home className="mt-3 h-10 w-10" />
+            <Home className="mt-3 mr-5 h-10 w-10" />
           </Link>
         </div>
         <div className="max-w-[29%]">
