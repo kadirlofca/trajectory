@@ -11,19 +11,21 @@ import addPart from "../../actions/item/addPart"
 export function CategoryMenu({ projectID, categoryID, partData }) {
     const [label, setLabel] = React.useState("category")
     const [open, setOpen] = React.useState(false)
-    const [isCompleted, setIsCompleted] = React.useState(false);
+    const [completed, setCompleted] = React.useState(false);
 
     const handlePartClick = (partId) => {
         addPart(partId, categoryID, projectID);
     }
 
     const handleMarkAsComplete = () => {
-        setIsCompleted(true);
+        setCompleted(true);
         setOpen(false);
     }
 
+    
+
     return (
-        <DropdownMenu open={open} onOpenChange={setOpen}>
+        <DropdownMenu open={open} onOpenChange={setOpen} className={completed ? 'bg-green-200' : ''}>
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" size="sm">
                     <MoreHorizontal />
@@ -58,12 +60,10 @@ export function CategoryMenu({ projectID, categoryID, partData }) {
                             </Command>
                         </DropdownMenuSubContent>
                     </DropdownMenuSub>
-                    {/* <DropdownMenuSub>
-                        <DropdownMenuSubTrigger onClick={handleMarkAsComplete}>
+                        <DropdownMenuItem onClick={handleMarkAsComplete}>
                             <Tags className="mr-2 h-4 w-4" />
                             Mark as Complete
-                        </DropdownMenuSubTrigger>
-                    </DropdownMenuSub> */}
+                        </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={() => { deleteCategory(categoryID) }} className="text-red-600">
                         Delete
