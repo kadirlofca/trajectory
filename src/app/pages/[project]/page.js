@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PocketBase from "pocketbase";
 import getCategories from "@/app/actions/utilities/getCategories";
+import getProjectCart from "@/app/actions/project/gerProjectCart";
 import { AddCategoryForm } from "@/app/components/forms/AddCategoryForm";
 import { Category } from "@/app/components/items/Category";
 import { Home, ShoppingCart, ShoppingBag } from "lucide-react";
@@ -17,33 +18,6 @@ export default async function Page({ params }) {
     });
 
   // Find all parts to calculate cart $$$
-  var cart = 0
-  var bought = 0
-  await projectCategories.items.forEach(async (category) => {
-    const parts = await pb
-      .collection("project_part")
-      .getList(0, 99, {
-        filter: 'category="' + category.id + '"',
-      });
-
-    parts.items.forEach(async (part) => {
-      const products = await pb
-        .collection("project_item")
-        .getList(0, 99, {
-          filter: 'part="' + part.id + '"',
-        });
-
-      products.items.forEach(async (product) => {
-        if (product.mark == "selected") {
-          cart += Number(product.budget)
-        }
-        else if (product.mark == "bought") {
-          cart += Number(product.budget)
-        }
-      })
-    })
-  })
-
   const items = await Promise.all(
     projectCategories.items.map(async (data) => {
       data.categoryName = (
@@ -70,13 +44,13 @@ export default async function Page({ params }) {
         <div className="content-center max-w-[30%] ml-20 flex items-center gap-2">
           <ShoppingCart className="h-8 w-8" />
           <span className="font-bold">
-            Shopping Cart: ${cart}
+            Shopping Cart: ${getProjectCart(projectID)}
           </span>
         </div>
         <div className="content-center max-w-[30%] ml-20 flex items-center gap-2">
           <ShoppingBag className="h-8 w-8" />
           <span className="font-bold">
-            Total Spent: ${bought}
+            Total Spent: ${ }
           </span>
         </div>
       </div>
