@@ -25,7 +25,7 @@ export function Product({ productData }) {
                 {parts.map((part, index) => {
                     if (urlRegex.test(part)) {
                         return (
-                            <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:underline">
+                            <a key={index} href={part} rel="noopener noreferrer" className="text-blue-800 hover:underline">
                                 {part}
                             </a>
                         );
