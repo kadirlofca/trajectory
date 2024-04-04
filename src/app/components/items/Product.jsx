@@ -38,18 +38,22 @@ export function Product({ productData }) {
     };
 
     return (
+<<<<<<< Updated upstream
         <div className={(productData.mark == "none" ? "bg-gray-500" : productData.mark == "selected" ? "bg-blue-400" : "bg-green-400") + " flex w-full flex-col items-start justify-between rounded-md ml-10 px-4 py-3 sm:flex-row sm:items-center"}>
+=======
+        <div className={(productData.mark == "none" ? "bg-primary" : productData.mark == "selected" ? "bg-blue-200" : "bg-green-200") + " flex w-full flex-col items-start justify-between rounded-md ml-10 border border-gray-300 px-4 py-3 sm:flex-row sm:items-center"}>
+>>>>>>> Stashed changes
             <Popover>
                 <p className="text-sm font-medium leading-none">
-                    <span className="content-center mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
+                    <span className="content-center mr-2 rounded-lg bg-white text-black px-2 py-1 text-xs text-primary-foreground">
                         Product
                     </span>
                 </p>
                 <p className="text-sm font-medium leading-none">
                     <PopoverTrigger>
-                        <span className="text-white">{productData.title} -- Price: {formattedCurrency(productData.budget)}</span>
+                        <span>{productData.title} -- Price: {formattedCurrency(productData.budget)}</span>
                         <br />
-                        <span className="text-white">Description: {renderDescription()}</span>
+                        <span>Description: {renderDescription()}</span>
                     </PopoverTrigger>
                 </p>
                 <PopoverContent align="end" className="w-[450px]">

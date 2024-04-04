@@ -60,7 +60,7 @@ export const Project = ({ projectData }) => {
     }
 
     return (
-        <Card className="bg-gray-500 text-white w-[350px] ml-4 mb-4 hover:cursor-pointer">
+        <Card className="w-[350px] ml-4 mb-4 hover:cursor-pointer">
             <Link href={"/pages/" + projectData.id}>
                 <CardHeader>
                     <CardTitle>{projectData.name}</CardTitle>

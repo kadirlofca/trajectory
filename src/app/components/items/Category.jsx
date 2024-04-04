@@ -20,12 +20,16 @@ export async function Category({ categoryData, projectID, completed }) {
 
     return (
         <>
+<<<<<<< Updated upstream
             <div className={`flex w-full flex-col bg-gray-500 mt-4 items-start justify-between rounded-md px-4 py-3 sm:flex-row sm:items-center`}>
+=======
+            <div className={`flex w-full flex-col bg-primary mt-4 items-start justify-between rounded-md border border-gray-300 px-4 py-3 sm:flex-row sm:items-center`}>
+>>>>>>> Stashed changes
                 <p className="text-sm font-medium leading-none">
-                    <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
+                    <span className="mr-2 rounded-lg bg-white text-black px-2 py-1 text-xs text-primary-foreground">
                         Category
                     </span>
-                    <span className="text-white">{categoryData.categoryName}</span>
+                    <span>{categoryData.categoryName}</span>
                 </p>
                 <CategoryMenu partData={await getPart(categoryData.category)} projectID={projectID} categoryID={categoryData.id} />
 

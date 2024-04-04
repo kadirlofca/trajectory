@@ -18,12 +18,16 @@ export async function Part({ partData, categoryID }) {
 
     return (
         <>
+<<<<<<< Updated upstream
             <div className="flex w-full flex-col bg-gray-500 items-start justify-between rounded-md ml-5 px-4 py-3 sm:flex-row sm:items-center">
+=======
+            <div className="flex w-full flex-col bg-primary items-start justify-between rounded-md ml-5 border border-gray-300 px-4 py-3 sm:flex-row sm:items-center">
+>>>>>>> Stashed changes
                 <p className="text-sm font-medium leading-none">
-                    <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
+                    <span className="mr-2 rounded-lg px-2 bg-white text-black py-1 text-xs text-primary-foreground">
                         Part
                     </span>
-                    <span className="text-white">{partData.partName}</span>
+                    <span>{partData.partName}</span>
                 </p>
                 <PartMenu partID={partData.id} />
             </div>
