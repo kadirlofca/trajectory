@@ -18,7 +18,7 @@ export async function Part({ partData, categoryID }) {
 
     return (
         <>
-            <div className="flex w-full flex-col bg-gray-500 items-start justify-between rounded-md ml-5 border border-gray-300 px-4 py-3 sm:flex-row sm:items-center">
+            <div className="flex w-full flex-col bg-gray-500 items-start justify-between rounded-md ml-5 px-4 py-3 sm:flex-row sm:items-center">
                 <p className="text-sm font-medium leading-none">
                     <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
                         Part

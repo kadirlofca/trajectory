@@ -38,7 +38,7 @@ export function Product({ productData }) {
     };
 
     return (
-        <div className={(productData.mark == "none" ? "bg-gray-500" : productData.mark == "selected" ? "bg-blue-400" : "bg-green-400") + " flex w-full flex-col items-start justify-between rounded-md ml-10 border border-gray-300 px-4 py-3 sm:flex-row sm:items-center"}>
+        <div className={(productData.mark == "none" ? "bg-gray-500" : productData.mark == "selected" ? "bg-blue-400" : "bg-green-400") + " flex w-full flex-col items-start justify-between rounded-md ml-10 px-4 py-3 sm:flex-row sm:items-center"}>
             <Popover>
                 <p className="text-sm font-medium leading-none">
                     <span className="content-center mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">

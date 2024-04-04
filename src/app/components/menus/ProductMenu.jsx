@@ -47,7 +47,7 @@ export function ProductMenu({ productID }) {
                         </DropdownMenuSubContent>
                     </DropdownMenuSub>
                     <DropdownMenuItem onClick={() => { updateProductMark(productID, "selected") }}>
-                        Select
+                        Move to Cart
                     </DropdownMenuItem>
                     <DropdownMenuItem onClick={() => { updateProductMark(productID, "bought") }}>
                         Mark As Bought
