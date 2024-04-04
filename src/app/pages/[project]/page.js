@@ -16,6 +16,34 @@ export default async function Page({ params }) {
       filter: 'project="' + projectID + '"',
     });
 
+  // Find all parts to calculate cart $$$
+  var cart = 0
+  var bought = 0
+  await projectCategories.items.forEach(async (category) => {
+    const parts = await pb
+      .collection("project_part")
+      .getList(0, 99, {
+        filter: 'category="' + category.id + '"',
+      });
+
+    parts.items.forEach(async (part) => {
+      const products = await pb
+        .collection("project_item")
+        .getList(0, 99, {
+          filter: 'part="' + part.id + '"',
+        });
+
+      products.items.forEach(async (product) => {
+        if (product.mark == "selected") {
+          cart += Number(product.budget)
+        }
+        else if (product.mark == "bought") {
+          cart += Number(product.budget)
+        }
+      })
+    })
+  })
+
   const items = await Promise.all(
     projectCategories.items.map(async (data) => {
       data.categoryName = (
@@ -40,19 +68,19 @@ export default async function Page({ params }) {
           </Link>
         </div>
         <div className="content-center max-w-[30%] ml-20 flex items-center gap-2">
-        <ShoppingCart className="h-8 w-8" />
-        <span className="font-bold">
-          Shopping Cart: $--
-        </span>
+          <ShoppingCart className="h-8 w-8" />
+          <span className="font-bold">
+            Shopping Cart: ${cart}
+          </span>
         </div>
         <div className="content-center max-w-[30%] ml-20 flex items-center gap-2">
-        <ShoppingBag className="h-8 w-8" />
-        <span className="font-bold">
-          Total Spent: $--
-        </span>
+          <ShoppingBag className="h-8 w-8" />
+          <span className="font-bold">
+            Total Spent: ${bought}
+          </span>
         </div>
       </div>
-      
+
       <div className="flex flex-col items-center mt-3">
         <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
           <AddCategoryForm
