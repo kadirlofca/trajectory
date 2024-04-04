@@ -3,7 +3,7 @@ import PocketBase from "pocketbase";
 import getCategories from "@/app/actions/utilities/getCategories";
 import { AddCategoryForm } from "@/app/components/forms/AddCategoryForm";
 import { Category } from "@/app/components/items/Category";
-import { Home, ShoppingCart } from "lucide-react";
+import { Home, ShoppingCart, ShoppingBag } from "lucide-react";
 
 
 export default async function Page({ params }) {
@@ -33,20 +33,23 @@ export default async function Page({ params }) {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center gap-20 max-w-screen-lg mx-auto mb-2 py-1 pl-3 border-b-4 border-yellow-500 bg-gray-300">
-        <div className="content-center max-w-[29%]">
+      <div className="flex flex-wrap justify-center gap-20 max-w-screen-lg mx-auto mb-2 py-3 pl-4 border-b-4 border-yellow-500 bg-gray-300">
+        <div className="content-center max-w-[30%]">
           <Link href="/" passHref>
             <Home className="h-9 w-9" />
           </Link>
         </div>
-        <div className="content-center max-w-[29%]">
-          Trajectory helps you organize and keep track of your car projects.
+        <div className="content-center max-w-[30%] ml-20 flex items-center gap-2">
+        <ShoppingCart className="h-8 w-8" />
+        <span className="font-bold">
+          Shopping Cart: $--
+        </span>
         </div>
-        <div className="content-center max-w-[29%]">
-          Kadir Lofca - Kennedy Ninh - Hayden Perusek
-        </div>
-        <div className="content-center max-w-[29%]">
-          <ShoppingCart className="h-9 w-9" />
+        <div className="content-center max-w-[30%] ml-20 flex items-center gap-2">
+        <ShoppingBag className="h-8 w-8" />
+        <span className="font-bold">
+          Total Spent: $--
+        </span>
         </div>
       </div>
       

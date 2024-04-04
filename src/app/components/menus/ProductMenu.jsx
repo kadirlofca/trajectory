@@ -31,7 +31,7 @@ export function ProductMenu({ productID }) {
     return (
         <DropdownMenu open={open} onOpenChange={setOpen}>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm">
+                <Button variant="horizontal" size="sm">
                     <MoreHorizontal />
                 </Button>
             </DropdownMenuTrigger>

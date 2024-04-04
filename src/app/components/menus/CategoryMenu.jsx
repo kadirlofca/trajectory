@@ -17,7 +17,7 @@ export function CategoryMenu({ projectID, categoryID, partData, completed, onMar
     return (
         <DropdownMenu className={"bg-yellow-200"}>
             <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm">
+                <Button variant="horizontal" size="sm">
                     <MoreHorizontal />
                 </Button>
             </DropdownMenuTrigger>

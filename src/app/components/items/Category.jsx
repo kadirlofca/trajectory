@@ -19,12 +19,12 @@ export async function Category({ categoryData, projectID, completed }) {
 
     return (
         <>
-            <div className={`flex w-full flex-col bg-gray-300 mt-4 items-start justify-between rounded-md border px-4 py-3 sm:flex-row sm:items-center`}>
+            <div className={`flex w-full flex-col bg-gray-500 mt-4 items-start justify-between rounded-md border border-gray-300 px-4 py-3 sm:flex-row sm:items-center`}>
                 <p className="text-sm font-medium leading-none">
                     <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
                         Category
                     </span>
-                    <span className="text-black">{categoryData.categoryName}</span>
+                    <span className="text-white">{categoryData.categoryName}</span>
                 </p>
                 <CategoryMenu partData={await getPart(categoryData.category)} projectID={projectID} categoryID={categoryData.id}/>
             </div>

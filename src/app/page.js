@@ -2,7 +2,7 @@ import PocketBase from "pocketbase";
 import { revalidatePath } from "next/cache";
 import { Project } from "./components/items/Project";
 import { AddProjectForm } from "./components/forms/AddProjectForm";
-import { Home, ShoppingCart } from "lucide-react";
+import { Home } from "lucide-react";
 import Link from "next/link";
 export const dynamic = "force-static";
 
@@ -27,9 +27,6 @@ export default async function Projects() {
         </div>
         <div className="content-center max-w-[29%]">
           Kadir Lofca - Kennedy Ninh - Hayden Perusek
-        </div>
-        <div className="content-center max-w-[29%]">
-          <ShoppingCart className="h-9 w-9" />
         </div>
       </div>
       
