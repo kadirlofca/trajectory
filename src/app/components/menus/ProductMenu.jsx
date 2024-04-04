@@ -6,6 +6,7 @@ import { EditProductForm } from "../forms/EditProductForm"
 import { MoreHorizontal, Tags, Trash } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import updateProductMark from "@/app/actions/item/updateProductMark"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Input } from "@/components/ui/input"
 import {
@@ -48,7 +49,10 @@ export function ProductMenu({ productID }) {
                     {/* <DropdownMenuItem>
                         Select Product
                     </DropdownMenuItem> */}
-                    <DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => { updateProductMark(productID, "selected") }}>
+                        Select
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => { updateProductMark(productID, "bought") }}>
                         Mark As Bought
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />

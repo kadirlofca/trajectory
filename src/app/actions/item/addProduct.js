@@ -11,7 +11,8 @@ export default async function addProduct(partID, values) {
         title: values.name,
         part: partID,
         text: values.text,
-        budget: values.budget
+        budget: values.budget,
+        mark: "none"
     })
 
     revalidatePath("/", "layout")
