@@ -31,7 +31,7 @@ export function Product({ productData }) {
                     if (urlRegex.test(part)) {
                         // Render the URL as a clickable link
                         return (
-                            <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                            <a key={index} href={part} target="_blank" rel="noopener noreferrer" className="text-blue-800 hover:underline">
                                 {part}
                             </a>
                         );
@@ -54,15 +54,15 @@ export function Product({ productData }) {
                 </p>
                 <p className="text-sm font-medium leading-none">
                     <PopoverTrigger>
-                        <span className="text-muted-foreground">{productData.title} -- Price: {formattedCurrency(productData.budget)}</span>
+                        <span className="text-black">{productData.title} -- Price: {formattedCurrency(productData.budget)}</span>
                         <br />
-                        <span className="text-muted-foreground">Description: {renderDescription()}</span>
+                        <span className="text-black">Description: {renderDescription()}</span>
                     </PopoverTrigger>
                 </p>
                 <PopoverContent align="end" className="w-[450px]">
                     <div className="p-4">
                         <h2><strong>{productData.title}</strong></h2>
-                        <p><span className="text-decoration-line: underline">Price:</span> ${productData.budget}</p>
+                        <p><span className="text-decoration-line: underline">Price: {formattedCurrency(productData.budget)}</span></p>
                         <p><span className="text-decoration-line: underline">Description:</span> {renderDescription()}</p>
                     </div>
                 </PopoverContent>

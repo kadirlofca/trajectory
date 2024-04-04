@@ -3,7 +3,7 @@ import PocketBase from "pocketbase";
 import getCategories from "@/app/actions/utilities/getCategories";
 import { AddCategoryForm } from "@/app/components/forms/AddCategoryForm";
 import { Category } from "@/app/components/items/Category";
-import { Home } from "lucide-react";
+import { Home, ShoppingCart } from "lucide-react";
 
 
 export default async function Page({ params }) {
@@ -44,6 +44,9 @@ export default async function Page({ params }) {
         </div>
         <div className="content-center max-w-[29%]">
           Kadir Lofca - Kennedy Ninh - Hayden Perusek
+        </div>
+        <div className="content-center max-w-[29%]">
+          <ShoppingCart className="h-9 w-9" />
         </div>
       </div>
       

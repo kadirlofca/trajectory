@@ -22,7 +22,7 @@ export async function Part({ partData, categoryID }) {
                     <span className="mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
                         Part
                     </span>
-                    <span className="text-muted-foreground">{partData.partName}</span>
+                    <span className="text-black">{partData.partName}</span>
                 </p>
                 <PartMenu partID={partData.id} />
             </div>

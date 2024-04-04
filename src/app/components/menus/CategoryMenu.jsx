@@ -14,13 +14,6 @@ export function CategoryMenu({ projectID, categoryID, partData, completed, onMar
         addPart(partId, categoryID, projectID);
     }
 
-    const handleMarkAsComplete = () => {
-        console.log("Mark as Complete clicked"); // Debugging statement
-        onMarkAsComplete(); // Call the parent function to update completion status
-    }
-
-    console.log("Completed:", completed); // Debugging statement
-
     return (
         <DropdownMenu className={"bg-yellow-200"}>
             <DropdownMenuTrigger asChild>
