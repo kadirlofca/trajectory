@@ -18,39 +18,25 @@ module.exports = {
     },
     extend: {
       colors: {
+        text: '#000000',
+        background: '#0f0a0a',
+        primary: '#c9b0b0',
+        secondary: '#655b43',
+        accent: '#a19e72',
+        card: '#c9b0b0',
+        button: '#B8B060',
+        popover: '#a19e72',
+        muted: '#655b43',
+        destructive: '#C72329',
+        border: '#A1A1A1',
+        input: '#C9C4C4',
+        ring: '#655b43',
+        radius: '#A1A1A1',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -73,5 +59,9 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [
+    require('postcss-nesting'), // Moved this line before Tailwind CSS
+    require('tailwindcss'),
+    require('autoprefixer'),
+  ],
+};
