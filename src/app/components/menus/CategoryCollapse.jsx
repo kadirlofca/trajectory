@@ -1,15 +1,16 @@
 'use client'
 
-import React, { useState } from "react";
+import * as React from "react"
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible";
 
 export function CategoryCollapse({ title, children }) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = React.useState(true);
 
   return (
-    <div>
-      <div className="flex justify-between items-center">
+    <Collapsible>
+      <CollapsibleTrigger as="div" className="flex justify-between items-center">
         <h2>{title}</h2>
         <Button
           variant="ghost"
@@ -18,8 +19,10 @@ export function CategoryCollapse({ title, children }) {
         >
           {collapsed ? <ChevronDown /> : <ChevronUp />}
         </Button>
-      </div>
-      {!collapsed && <div>{children}</div>}
-    </div>
+      </CollapsibleTrigger>
+      <CollapsibleContent>
+        <div>{children}</div>
+      </CollapsibleContent>
+    </Collapsible>
   );
 }
