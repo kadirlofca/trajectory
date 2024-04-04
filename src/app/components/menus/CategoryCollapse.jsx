@@ -1,11 +1,10 @@
-'use client'
-
-import React, { useState } from "react";
+// CategoryCollapse.jsx
+import React from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function CategoryCollapse({ title, children }) {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = React.useState(false);
 
   return (
     <div>
@@ -19,7 +18,15 @@ export function CategoryCollapse({ title, children }) {
           {collapsed ? <ChevronDown /> : <ChevronUp />}
         </Button>
       </div>
-      {!collapsed && <div>{children}</div>}
+      {collapsed ? null : children}
     </div>
   );
 }
+
+export async function getServerSideProps(context) {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
+
+export default CategoryCollapse;
