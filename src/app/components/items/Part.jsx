@@ -4,6 +4,7 @@ import * as React from "react"
 import { PartMenu } from "../menus/PartMenu"
 import PocketBase from "pocketbase";
 import { Product } from "./Product";
+import { CategoryCollapse } from "../menus/CategoryCollapse";
 
 export async function Part({ partData, categoryID }) {
     const pb = new PocketBase("http://127.0.0.1:8090")
@@ -26,8 +27,9 @@ export async function Part({ partData, categoryID }) {
                 </p>
                 <PartMenu partID={partData.id} />
             </div>
-            {items}
-
+            <CategoryCollapse>
+                {items}
+            </CategoryCollapse>
         </>
     )
 }

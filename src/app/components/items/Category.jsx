@@ -5,6 +5,7 @@ import PocketBase from "pocketbase";
 import { CategoryMenu } from "../menus/CategoryMenu";
 import { Part } from "./Part";
 import getPart from "../../actions/utilities/getPart";
+import { CategoryCollapse } from "../menus/CategoryCollapse";
 
 export async function Category({ categoryData, projectID, completed }) {
     const pb = new PocketBase("http://127.0.0.1:8090")
@@ -26,9 +27,12 @@ export async function Category({ categoryData, projectID, completed }) {
                     </span>
                     <span className="text-white">{categoryData.categoryName}</span>
                 </p>
-                <CategoryMenu partData={await getPart(categoryData.category)} projectID={projectID} categoryID={categoryData.id}/>
+                <CategoryMenu partData={await getPart(categoryData.category)} projectID={projectID} categoryID={categoryData.id} />
+
             </div>
-            {items}
+            <CategoryCollapse>
+                {items}
+            </CategoryCollapse>
         </>
     )
 }
