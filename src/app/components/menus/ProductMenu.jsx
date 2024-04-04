@@ -46,9 +46,6 @@ export function ProductMenu({ productID }) {
                             <EditProductForm productID={productID} />
                         </DropdownMenuSubContent>
                     </DropdownMenuSub>
-                    {/* <DropdownMenuItem>
-                        Select Product
-                    </DropdownMenuItem> */}
                     <DropdownMenuItem onClick={() => { updateProductMark(productID, "selected") }}>
                         Select
                     </DropdownMenuItem>

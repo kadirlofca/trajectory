@@ -8,12 +8,12 @@ export function Product({ productData }) {
     const [open, setOpen] = React.useState(false)
 
     // Function to format currency
-const formattedCurrency = (amount, currency = 'USD') => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: currency
-    }).format(amount);
-  }
+    const formattedCurrency = (amount, currency = 'USD') => {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: currency
+        }).format(amount);
+    }
 
     // Function to render description with clickable links
     const renderDescription = () => {
@@ -45,7 +45,7 @@ const formattedCurrency = (amount, currency = 'USD') => {
     };
 
     return (
-        <div className="flex w-full flex-col bg-gray-300 items-start justify-between rounded-md ml-10 border px-4 py-3 sm:flex-row sm:items-center">
+        <div className={(productData.mark == "none" ? "bg-gray-300" : productData.mark == "selected" ? "bg-blue-300" : "bg-green-300") + " flex w-full flex-col items-start justify-between rounded-md ml-10 border px-4 py-3 sm:flex-row sm:items-center"}>
             <Popover>
                 <p className="text-sm font-medium leading-none">
                     <span className="content-center mr-2 rounded-lg bg-primary px-2 py-1 text-xs text-primary-foreground">
