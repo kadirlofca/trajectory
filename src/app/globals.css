@@ -58,3 +58,7 @@
     color: var(--foreground); /* Apply the foreground text color */
   }
 }
+
+nextjs-portal {
+  display: none;
+}
