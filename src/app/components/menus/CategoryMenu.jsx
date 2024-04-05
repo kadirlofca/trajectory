@@ -15,7 +15,7 @@ export function CategoryMenu({ projectID, categoryID, partData, completed, onMar
     }
 
     return (
-        <DropdownMenu className="text-black">
+        <DropdownMenu className="text-black bg-accent">
             <DropdownMenuTrigger asChild>
                 <Button variant="horizontal" size="sm" className="bg-transparent hover:bg-transparent hover:text-white">
                     <MoreHorizontal />

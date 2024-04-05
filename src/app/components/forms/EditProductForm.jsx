@@ -55,7 +55,7 @@ export function EditProductForm({ productID }) {
     const [isCompleted, setIsCompleted] = React.useState(false);
 
     return (
-        <Card>
+        <Card className="bg-accent">
             <CardContent>
                 <div>
                     <h4 className="font-medium text-center leading-none my-4">Edit Product</h4>

@@ -68,8 +68,6 @@ export const Project = ({ projectData }) => {
                 <CardContent>
                     <p>{projectData.year} {projectData.make} {projectData.model}</p>
                     <p>Budget: {formattedCurrency(projectData.budget)}</p>
-                    <p>Shopping Cart: not implemented</p>
-                    <p>Total Spent: not implemented</p>
                 </CardContent>
             </Link>
 

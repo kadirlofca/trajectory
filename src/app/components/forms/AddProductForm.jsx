@@ -50,7 +50,7 @@ export function AddProductForm({ partID }) {
     }
 
     return (
-        <Card>
+        <Card className="bg-accent">
             <CardContent>
                 <div>
                     <h4 className="font-medium text-center leading-none my-4">New Product</h4>

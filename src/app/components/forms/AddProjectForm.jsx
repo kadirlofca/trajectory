@@ -59,7 +59,7 @@ export function AddProjectForm() {
                             <Button>Add New Project</Button>
                         </div>
                     </PopoverTrigger>
-                    <PopoverContent>
+                    <PopoverContent className="bg-accent">
                         <div>
                             <h4 className="font-medium text-center leading-none">New Project</h4>
                         </div>

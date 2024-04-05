@@ -14,6 +14,7 @@ export function CategoryCollapse({ title, children }) {
         <h2>{title}</h2>
         <Button
           variant="ghost"
+          className="text-white"
           size="sm"
           onClick={() => setCollapsed((prevCollapsed) => !prevCollapsed)}
         >
