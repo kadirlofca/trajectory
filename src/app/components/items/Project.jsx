@@ -78,7 +78,7 @@ export const Project = ({ projectData }) => {
                         <div>
                             <Button>Edit</Button></div>
                     </PopoverTrigger>
-                    <PopoverContent sideOffset={-188}>
+                    <PopoverContent sideOffset={-188} className="bg-accent">
                         <div>
                             <h4 className="font-medium text-center leading-none">Edit Project</h4>
                         </div>
