@@ -11,6 +11,8 @@ export default async function createProject(projectData) {
         make: projectData.make,
         model: projectData.model,
         budget: projectData.budget,
+        cart: 0,
+        spent: 0
     });
     revalidatePath("/", "layout")
 }

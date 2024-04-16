@@ -18,7 +18,7 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 
-export function ProductMenu({ productID }) {
+export function ProductMenu({ productID, projectID }) {
     const [label, setLabel] = React.useState("category")
     const [open, setOpen] = React.useState(false)
     const [isCompleted, setIsCompleted] = React.useState(false);
@@ -46,10 +46,10 @@ export function ProductMenu({ productID }) {
                             <EditProductForm productID={productID} />
                         </DropdownMenuSubContent>
                     </DropdownMenuSub>
-                    <DropdownMenuItem onClick={() => { updateProductMark(productID, "selected") }}>
+                    <DropdownMenuItem onClick={() => { updateProductMark(productID, projectID, "selected") }}>
                         Move to Cart
                     </DropdownMenuItem>
-                    <DropdownMenuItem onClick={() => { updateProductMark(productID, "bought") }}>
+                    <DropdownMenuItem onClick={() => { updateProductMark(productID, projectID, "bought") }}>
                         Mark As Bought
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />

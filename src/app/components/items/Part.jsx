@@ -6,14 +6,14 @@ import PocketBase from "pocketbase";
 import { Product } from "./Product";
 import { CategoryCollapse } from "../menus/CategoryCollapse";
 
-export async function Part({ partData, categoryID }) {
+export async function Part({ partData, categoryID, projectID }) {
     const pb = new PocketBase("http://127.0.0.1:8090")
     const products = await pb.collection('project_item').getList(0, 99, {
         filter: 'part="' + partData.id + '"'
     })
 
     const items = await Promise.all(products.items.map(async (data) => {
-        return <Product productData={data} />
+        return <Product productData={data} projectID={projectID} />
     }))
 
     return (

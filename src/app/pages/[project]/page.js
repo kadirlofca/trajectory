@@ -1,8 +1,8 @@
 import Link from "next/link";
 import PocketBase from "pocketbase";
 import getCategories from "@/app/actions/utilities/getCategories";
-import getProjectCart from "@/app/actions/project/getProjectCartFake";
-import getProjectBought from "@/app/actions/project/getProjectBoughtFake";
+import getProjectCart from "@/app/actions/project/getProjectCart";
+import getProjectSpent from "@/app/actions/project/getProjectSpent";
 import { AddCategoryForm } from "@/app/components/forms/AddCategoryForm";
 import { Category } from "@/app/components/items/Category";
 import { Home, ShoppingCart, ShoppingBag } from "lucide-react";
@@ -35,7 +35,7 @@ export default async function Page({ params }) {
   );
 
   const cart = await getProjectCart(projectID)
-  const bought = await getProjectBought(projectID)
+  const spent = await getProjectSpent(projectID)
 
   return (
     <div>
@@ -54,7 +54,7 @@ export default async function Page({ params }) {
         <div className="content-center max-w-[30%] ml-20 flex items-center gap-2">
           <ShoppingBag className="h-8 w-8" />
           <span className="font-bold">
-            Total Spent: ${bought}
+            Total Spent: ${spent}
           </span>
         </div>
       </div>

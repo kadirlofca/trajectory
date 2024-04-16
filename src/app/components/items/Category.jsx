@@ -7,7 +7,7 @@ import { Part } from "./Part";
 import getPart from "../../actions/utilities/getPart";
 import { CategoryCollapse } from "../menus/CategoryCollapse";
 
-export async function Category({ categoryData, projectID, completed }) {
+export async function Category({ categoryData, projectID }) {
     const pb = new PocketBase("http://127.0.0.1:8090")
     const parts = await pb.collection('project_part').getList(0, 99, {
         filter: 'category="' + categoryData.id + '"'

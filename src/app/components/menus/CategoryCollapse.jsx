@@ -7,6 +7,7 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/component
 
 export function CategoryCollapse({ title, children }) {
   const [collapsed, setCollapsed] = React.useState(true);
+  
 
   return (
     <Collapsible>

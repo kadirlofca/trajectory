@@ -4,7 +4,7 @@ import Link from "next/link"
 import { ProductMenu } from "../menus/ProductMenu"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
-export function Product({ productData }) {
+export function Product({ productData, partID, categoryID, projectID }) {
     const [open, setOpen] = React.useState(false)
 
     // Function to format currency
@@ -60,7 +60,7 @@ export function Product({ productData }) {
                     </div>
                 </PopoverContent>
             </Popover>
-            <ProductMenu productID={productData.id} />
+            <ProductMenu productID={productData.id} projectID={projectID} />
         </div>
     )
 }
