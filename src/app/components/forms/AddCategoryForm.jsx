@@ -26,11 +26,11 @@ export function AddCategoryForm({ projectID, categoryData }) {
   return (
     <Popover>
       <PopoverTrigger>
-        <div className="pt-5">
+        <div>
           <Button>Add Category</Button>
         </div>
       </PopoverTrigger>
-      <PopoverContent className="w-[350px] p-0">
+      <PopoverContent className="bg-card shadow-2xl">
         <Command>
           <CommandInput
             placeholder="Search Categories"
@@ -42,7 +42,7 @@ export function AddCategoryForm({ projectID, categoryData }) {
                 <div
                   key={data.id}
                   onClick={() => handleCategoryClick(data.id)}
-                  className="cursor-pointer border-b border-gray-200 p-2 hover:bg-gray-100"
+                  className="cursor-pointer border-b border-gray-200 p-2 hover:bg-gray-100 bg-card"
                 >
                   {data.name}
                 </div>

@@ -18,7 +18,7 @@ export function PartMenu({ partID, categoryID, projectID }) {
                     <MoreHorizontal />
                 </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-[200px]">
+            <DropdownMenuContent align="end" className="w-[200px] bg-card">
                 <DropdownMenuLabel>Actions</DropdownMenuLabel>
                 <DropdownMenuGroup>
                     <DropdownMenuSeparator />

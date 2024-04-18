@@ -25,10 +25,10 @@ import updateProduct from "@/app/actions/item/updateProduct"
 // Function to format currency
 const formattedCurrency = (amount, currency = 'USD') => {
     return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: currency
+        style: 'currency',
+        currency: currency
     }).format(amount);
-  }
+}
 
 const formSchema = z.object({
     name: z.string(),
@@ -55,7 +55,7 @@ export function EditProductForm({ productID }) {
     const [isCompleted, setIsCompleted] = React.useState(false);
 
     return (
-        <Card className="bg-accent">
+        <Card className="bg-card">
             <CardContent>
                 <div>
                     <h4 className="font-medium text-center leading-none my-4">Edit Product</h4>
@@ -95,7 +95,7 @@ export function EditProductForm({ productID }) {
                                 <FormItem>
                                     <FormLabel>Budget</FormLabel>
                                     <FormControl>
-                                        <Input placeholder={formattedCurrency(0)} {...field}/>
+                                        <Input placeholder={formattedCurrency(0)} {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
