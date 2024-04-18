@@ -13,8 +13,9 @@ export async function Part({ partData, categoryID, projectID }) {
     })
 
     const items = await Promise.all(products.items.map(async (data) => {
-        return <Product productData={data} projectID={projectID} categoryID={categoryID} partID={partData.id} />
+        return <Product key={data.id} productData={data} projectID={projectID} categoryID={categoryID} partID={partData.id} />
     }))
+    
 
     return (
         <>

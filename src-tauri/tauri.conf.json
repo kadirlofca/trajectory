@@ -4,7 +4,7 @@
     "beforeBuildCommand": "npm run build",
     "beforeDevCommand": "npm run dev",
     "devPath": "http://localhost:3000",
-    "distDir": "../out"
+    "distDir": "/Users/a/Desktop/CSC490/trajectory/src/app/page.js"
   },
   "package": {
     "productName": "trajectory",
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.trajectory.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
