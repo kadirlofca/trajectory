@@ -39,30 +39,21 @@ export function Product({ productData, partID, categoryID, projectID }) {
 
     return (
         <div className="ml-8">
-        <div className={(productData.mark == "none" ? "bg-card" : productData.mark == "selected" ? "bg-blue-200" : "bg-green-200") + " flex w-full flex-col items-start justify-between rounded-md border border-gray-300 py-3 sm:flex-row sm:items-center"}>
-            <Popover>
+            <div className={(productData.mark == "none" ? "bg-card" : productData.mark == "selected" ? "bg-blue-200" : "bg-green-200") + " flex w-full flex-col items-start justify-between rounded-md border border-gray-300 py-3 sm:flex-row sm:items-center"}>
                 <p className="text-sm font-medium leading-none">
-                    <span className="content-center mr-2 rounded-lg bg-white text-black px-2 py-1 text-xs text-primary-foreground">
+                    <span className="content-center mr-2 ml-3 rounded-lg bg-white text-black px-2 py-1 text-xs text-primary-foreground">
                         Product
                     </span>
                 </p>
                 <p className="text-sm font-medium leading-none">
-                    <PopoverTrigger>
-                        <span>{productData.title} -- Price: {formattedCurrency(productData.budget)}</span>
-                        <br />
-                        <span>Description: {renderDescription()}</span>
-                    </PopoverTrigger>
+
+                    <span>{productData.title} -- Price: {formattedCurrency(productData.budget)}</span>
+                    <br />
+                    <span>Description: {renderDescription()}</span>
+
                 </p>
-                <PopoverContent align="end" className="w-[450px]">
-                    <div className="p-4">
-                        <h2><strong>{productData.title}</strong></h2>
-                        <p><span className="text-decoration-line: underline">Price: {formattedCurrency(productData.budget)}</span></p>
-                        <p><span className="text-decoration-line: underline">Description:</span> {renderDescription()}</p>
-                    </div>
-                </PopoverContent>
-            </Popover>
-            <ProductMenu productID={productData.id} projectID={projectID} partID={partID} categoryID={categoryID} />
-        </div>
+                <ProductMenu productID={productData.id} projectID={projectID} partID={partID} categoryID={categoryID} />
+            </div>
         </div>
     )
 }

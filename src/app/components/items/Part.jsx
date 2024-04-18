@@ -21,7 +21,7 @@ export async function Part({ partData, categoryID, projectID }) {
         <div className="pl-8">
             <div className="flex w-full flex-col bg-card items-start max-w-screen-lg basis-full justify-between rounded-md border border-gray-300 py-3 sm:flex-row sm:items-center">
                 <p className="text-sm font-medium leading-none">
-                    <span className="mr-2 rounded-lg px-2 bg-white text-black py-1 text-xs text-primary-foreground">
+                    <span className="mr-2 rounded-lg px-2 ml-3 bg-white text-black py-1 text-xs text-primary-foreground">
                         Part
                     </span>
                     <span>{partData.partName}</span>
