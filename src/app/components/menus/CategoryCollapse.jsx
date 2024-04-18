@@ -6,19 +6,22 @@ import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible";
 
 export function CategoryCollapse({ title, children }) {
-  const [collapsed, setCollapsed] = React.useState(true);
-  
+  const [isOpen, setIsOpen] = React.useState(true);
+
 
   return (
-    <Collapsible className="w-full">
+    <Collapsible
+      open={isOpen}
+      onOpenChange={setIsOpen}
+      className="w-full"
+    >
       <CollapsibleTrigger as="div" className="flex justify-between items-center">
         <Button
           variant="ghost"
           className="text-white"
           size="sm"
-          onClick={() => setCollapsed((prevCollapsed) => !prevCollapsed)}
         >
-          {collapsed ? <ChevronDown /> : <ChevronUp />}
+          {isOpen ? <ChevronDown /> : <ChevronUp />}
         </Button>
       </CollapsibleTrigger>
       <CollapsibleContent>
