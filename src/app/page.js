@@ -9,8 +9,9 @@ export default async function Projects() {
 
   const pb = new PocketBase("http://127.0.0.1:8090");
   const projects = (await pb.collection("projects").getFullList())
-    .reverse()
-    .map((project) => <Project projectData={project} />);
+  .reverse()
+  .map((project) => <Project key={project.id} projectData={project} />);
+
 
   return (
     <div>

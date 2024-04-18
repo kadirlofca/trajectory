@@ -7,7 +7,6 @@ import { AddCategoryForm } from "@/app/components/forms/AddCategoryForm";
 import { Category } from "@/app/components/items/Category";
 import { ArrowLeft, ShoppingCart, ShoppingBag } from "lucide-react";
 
-
 export default async function Page({ params }) {
   const projectID = params.project;
 
@@ -71,4 +70,10 @@ export default async function Page({ params }) {
       </div>
     </div>
   );
+}
+
+export async function generateStaticParams() {
+  const pb = new PocketBase("http://127.0.0.1:8090");
+  const projects = await pb.collection("projects").getFullList();
+  return projects.map((project) => ({ params: { project: project.id } }));
 }
