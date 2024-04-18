@@ -38,7 +38,8 @@ export function Product({ productData, partID, categoryID, projectID }) {
     };
 
     return (
-        <div className={(productData.mark == "none" ? "bg-card" : productData.mark == "selected" ? "bg-blue-200" : "bg-green-200") + " flex w-full flex-col items-start ml-16 justify-between rounded-md border border-gray-300 py-3 sm:flex-row sm:items-center"}>
+        <div className="ml-8">
+        <div className={(productData.mark == "none" ? "bg-card" : productData.mark == "selected" ? "bg-blue-200" : "bg-green-200") + " flex w-full flex-col items-start justify-between rounded-md border border-gray-300 py-3 sm:flex-row sm:items-center"}>
             <Popover>
                 <p className="text-sm font-medium leading-none">
                     <span className="content-center mr-2 rounded-lg bg-white text-black px-2 py-1 text-xs text-primary-foreground">
@@ -61,6 +62,7 @@ export function Product({ productData, partID, categoryID, projectID }) {
                 </PopoverContent>
             </Popover>
             <ProductMenu productID={productData.id} projectID={projectID} partID={partID} categoryID={categoryID} />
+        </div>
         </div>
     )
 }
