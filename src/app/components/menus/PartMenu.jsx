@@ -8,7 +8,7 @@ import { AddProductForm } from "../forms/AddProductForm"
 import deletePart from "@/app/actions/item/deletePart"
 
 
-export function PartMenu({ partID }) {
+export function PartMenu({ partID, categoryID, projectID }) {
     const [open, setOpen] = React.useState(false)
 
     return (
@@ -31,7 +31,7 @@ export function PartMenu({ partID }) {
                         </DropdownMenuSubContent>
                     </DropdownMenuSub>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => { deletePart(partID) }} className="text-red-600">
+                    <DropdownMenuItem onClick={() => { deletePart(partID, categoryID, projectID) }} className="text-red-600">
                         Delete
                     </DropdownMenuItem>
                 </DropdownMenuGroup>

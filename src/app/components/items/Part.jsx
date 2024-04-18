@@ -25,7 +25,7 @@ export async function Part({ partData, categoryID, projectID }) {
                     </span>
                     <span>{partData.partName}</span>
                 </p>
-                <PartMenu partID={partData.id} />
+                <PartMenu partID={partData.id} categoryID={categoryID} projectID={projectID} />
             </div>
             <CategoryCollapse>
                 {items}
