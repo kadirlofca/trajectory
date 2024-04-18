@@ -18,24 +18,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        text: '#000000',
-        background: '#0f0a0a',
-        primary: '#c9b0b0',
-        secondary: '#655b43',
-        accent: '#dcdbca',
-        card: '#c9b0b0',
-        button: '#edf7c8',
-        popover: '#6b734f',
-        muted: '#655b43',
-        destructive: '#C72329',
-        border: '#A1A1A1',
-        input: '#2D2D2D',
-        ring: '#655b43',
-        radius: '#A1A1A1',
-        border: "hsl(var(--border))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        "card": "hsl(var(--primary))",
+        "accent": "hsl(var(--accent))",
+        "select": "hsl(var(--select))"
       },
       borderRadius: {
         lg: "var(--radius)",

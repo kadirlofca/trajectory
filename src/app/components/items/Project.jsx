@@ -30,10 +30,10 @@ import {
 // Function to format currency
 const formattedCurrency = (amount, currency = 'USD') => {
     return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: currency
+        style: 'currency',
+        currency: currency
     }).format(amount);
-  }
+}
 
 const formSchema = z.object({
     name: z.string(),
@@ -60,7 +60,7 @@ export const Project = ({ projectData }) => {
     }
 
     return (
-        <Card className="w-[350px] ml-4 mb-4 hover:cursor-pointer">
+        <Card className="w-[350px] hover:bg-select hover:cursor-pointer">
             <Link href={"/pages/" + projectData.id}>
                 <CardHeader>
                     <CardTitle>{projectData.name}</CardTitle>
@@ -72,13 +72,16 @@ export const Project = ({ projectData }) => {
             </Link>
 
             <CardFooter className="flex justify-between">
-                <button onClick={() => { deleteProject(projectData) }}><Button variant="destructive">Delete</Button></button>
+                <button onClick={() => { deleteProject(projectData) }}>
+                    <Button variant="destructive">Delete</Button>
+                </button>
                 <Popover>
                     <PopoverTrigger>
                         <div>
-                            <Button>Edit</Button></div>
+                            <Button>Edit</Button>
+                        </div>
                     </PopoverTrigger>
-                    <PopoverContent sideOffset={-188} className="bg-accent">
+                    <PopoverContent sideOffset={-188} className="bg-card shadow-2xl">
                         <div>
                             <h4 className="font-medium text-center leading-none">Edit Project</h4>
                         </div>

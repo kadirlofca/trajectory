@@ -27,7 +27,7 @@ export function AddCategoryForm({ projectID, categoryData }) {
     <Popover>
       <PopoverTrigger>
         <div className="pt-5">
-          <Button>+ Add Category</Button>
+          <Button>Add Category</Button>
         </div>
       </PopoverTrigger>
       <PopoverContent className="w-[350px] p-0">

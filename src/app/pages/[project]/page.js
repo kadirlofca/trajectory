@@ -5,7 +5,7 @@ import getProjectCart from "@/app/actions/project/getProjectCart";
 import getProjectSpent from "@/app/actions/project/getProjectSpent";
 import { AddCategoryForm } from "@/app/components/forms/AddCategoryForm";
 import { Category } from "@/app/components/items/Category";
-import { Home, ShoppingCart, ShoppingBag } from "lucide-react";
+import { ArrowLeft, ShoppingCart, ShoppingBag } from "lucide-react";
 
 
 export default async function Page({ params }) {
@@ -34,28 +34,29 @@ export default async function Page({ params }) {
     })
   );
 
+  const project = await pb.collection("projects").getOne(projectID)
   const cart = await getProjectCart(projectID)
   const spent = await getProjectSpent(projectID)
 
   return (
     <div>
-      <div className="flex flex-wrap justify-center gap-20 max-w-screen-lg mx-auto mb-2 py-3 pl-4 border-b-4 border-accent bg-secondary">
-        <div className="content-center max-w-[30%]">
-          <Link href="/" passHref>
-            <Home className="h-9 w-9" />
-          </Link>
-        </div>
-        <div className="content-center max-w-[30%] ml-20 flex items-center gap-2">
-          <ShoppingCart className="h-8 w-8" />
-          <span className="font-bold">
-            Cart: ${cart}
-          </span>
-        </div>
-        <div className="content-center max-w-[30%] ml-20 flex items-center gap-2">
-          <ShoppingBag className="h-8 w-8" />
-          <span className="font-bold">
-            Total Spent: ${spent}
-          </span>
+      <div className="flex flex-wrap text-card p-4 max-w-screen-lg mx-auto">
+
+        <Link href="/" passHref>
+          <ArrowLeft className="h-6 w-6" />
+        </Link>
+        &nbsp; {project.name}
+
+        <div className="ml-auto">
+          <div className="content-center flex">
+            <ShoppingCart className="h-6 w-6" />
+            &nbsp; Cart: ${cart}
+          </div>
+
+          <div className="content-center flex mt-2">
+            <ShoppingBag className="h-6 w-6" />
+            &nbsp; Total Spent: ${spent}
+          </div>
         </div>
       </div>
 
@@ -67,14 +68,6 @@ export default async function Page({ params }) {
           />
           {items}
         </div>
-      </div>
-
-      <div>
-        <footer className="border-t mt-60">
-          <div className="text-gray-400 flex flex-wrap justify-center gap-12 max-w-screen-lg mx-auto py-4 pl-8">
-            <div className="max-w-[29%]">Trajectory</div>
-          </div>
-        </footer>
       </div>
     </div>
   );
