@@ -18,7 +18,7 @@ export function CategoryCollapse({ title, children }) {
       <CollapsibleTrigger as="div" className="flex justify-between items-center">
         <Button
           variant="ghost"
-          className="text-white"
+          className="text-card ml-4"
           size="sm"
         >
           {isOpen ? <ChevronDown /> : <ChevronUp />}
