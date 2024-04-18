@@ -54,7 +54,7 @@ export function AddProjectForm() {
     return (
         <Popover >
             <PopoverTrigger>
-                <Card className="w-[175px] h-[210px] hover:cursor-pointer text-4xl hover:bg-select">
+                <Card className="w-[175px] h-[210px] content-center hover:cursor-pointer text-4xl hover:bg-select">
                     +
                 </Card >
             </PopoverTrigger>
