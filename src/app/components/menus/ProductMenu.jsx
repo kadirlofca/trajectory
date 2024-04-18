@@ -53,7 +53,7 @@ export function ProductMenu({ productID, projectID }) {
                         Mark As Bought
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => { deleteProduct(productID) }} className="text-red-600">
+                    <DropdownMenuItem onClick={() => { deleteProduct(productID, projectID) }} className="text-red-600">
                         Delete
                     </DropdownMenuItem>
                 </DropdownMenuGroup>

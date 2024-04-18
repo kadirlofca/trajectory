@@ -15,34 +15,34 @@ export default async function updateProductMark(id, projectID, markType) {
     if (markType == "bought" && oldProduct.mark != "bought") {
         if (oldProduct.mark == "selected") {
             await pb.collection('projects').update(projectID, {
-                cart: Number(project.cart - oldProduct.budget)
+                cart: Number(project.cart) - Number(oldProduct.budget)
             });
         }
 
         await pb.collection('projects').update(projectID, {
-            spent: Number(project.spent + oldProduct.budget)
+            spent: Number(project.spent) + Number(oldProduct.budget)
         });
     }
     else if (markType == "selected" && oldProduct.mark != "selected") {
         if (oldProduct.mark == "bought") {
             await pb.collection('projects').update(projectID, {
-                spent: Number(project.spent - oldProduct.budget)
+                spent: Number(project.spent) - Number(oldProduct.budget)
             });
         }
 
         await pb.collection('projects').update(projectID, {
-            cart: Number(project.cart + oldProduct.budget)
+            cart: Number(project.cart) + Number(oldProduct.budget)
         });
     }
     else if (markType == "none" && oldProduct.mark != "none") {
         if (oldProduct.mark == "bought") {
             await pb.collection('projects').update(projectID, {
-                spent: Number(project.spent - oldProduct.budget)
+                spent: Number(project.spent) - Number(oldProduct.budget)
             });
         }
         else if (oldProduct.mark == "selected") {
             await pb.collection('projects').update(projectID, {
-                cart: Number(project.cart - oldProduct.budget)
+                cart: Number(project.cart) - Number(oldProduct.budget)
             });
         }
     }

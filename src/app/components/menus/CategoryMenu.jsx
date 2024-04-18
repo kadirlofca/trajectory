@@ -54,7 +54,7 @@ export function CategoryMenu({ projectID, categoryID, partData, completed, onMar
                             Mark as Complete
                         </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem onClick={() => { deleteCategory(categoryID) }} className="text-red-600">
+                    <DropdownMenuItem onClick={() => { deleteCategory(categoryID, projectID) }} className="text-red-600">
                         Delete
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
