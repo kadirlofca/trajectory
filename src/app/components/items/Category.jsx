@@ -23,7 +23,7 @@ export async function Category({ categoryData, projectID }) {
         <>
             <div className={`flex flex-col bg-card mt-4 items-start max-w-screen-lg w-full basis-full justify-between rounded-md border border-gray-300 py-3 sm:flex-row sm:items-center`}>
                 <p className="text-sm font-medium leading-none">
-                    <span className="mr-2 rounded-lg bg-white text-black px-2 py-1 text-xs text-primary-foreground">
+                    <span className="mr-2 rounded-lg bg-white ml-3 text-black px-2 py-1 text-xs text-primary-foreground">
                         Category
                     </span>
                     <span>{categoryData.categoryName}</span>

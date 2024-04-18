@@ -52,13 +52,13 @@ export function AddProjectForm() {
     }
 
     return (
-        <Popover >
+        <Popover>
             <PopoverTrigger>
                 <Card className="w-[175px] h-[210px] content-center hover:cursor-pointer text-4xl hover:bg-select">
                     +
                 </Card >
             </PopoverTrigger>
-            <PopoverContent className="bg-card shadow-2xl">
+            <PopoverContent sideOffset={-195} className="bg-card shadow-2xl">
                 <div>
                     <h4 className="font-medium text-center leading-none">New Project</h4>
                 </div>
