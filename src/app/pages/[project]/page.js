@@ -60,14 +60,13 @@ export default async function Page({ params }) {
         </div>
       </div>
 
-      <div className="flex flex-col items-center mt-3">
-        <div className="flex flex-wrap justify-center mx-auto max-w-screen-lg">
+      <div className="flex flex-col items-center mx-auto mt-3 max-w-screen-lg">
           <AddCategoryForm
             projectID={projectID}
             categoryData={await getCategories()}
           />
           {items}
-        </div>
+        
       </div>
     </div>
   );

@@ -10,9 +10,8 @@ export function CategoryCollapse({ title, children }) {
   
 
   return (
-    <Collapsible>
+    <Collapsible className="w-full">
       <CollapsibleTrigger as="div" className="flex justify-between items-center">
-        <h2>{title}</h2>
         <Button
           variant="ghost"
           className="text-white"
@@ -23,7 +22,7 @@ export function CategoryCollapse({ title, children }) {
         </Button>
       </CollapsibleTrigger>
       <CollapsibleContent>
-        <div>{children}</div>
+        {children}
       </CollapsibleContent>
     </Collapsible>
   );

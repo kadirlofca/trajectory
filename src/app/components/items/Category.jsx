@@ -20,7 +20,7 @@ export async function Category({ categoryData, projectID }) {
 
     return (
         <>
-            <div className={`flex w-full flex-col bg-card mt-4 items-start justify-between rounded-md border border-gray-300 px-4 py-3 sm:flex-row sm:items-center`}>
+            <div className={`flex flex-col bg-card mt-4 items-start max-w-screen-lg w-full basis-full justify-between rounded-md border border-gray-300 py-3 sm:flex-row sm:items-center`}>
                 <p className="text-sm font-medium leading-none">
                     <span className="mr-2 rounded-lg bg-white text-black px-2 py-1 text-xs text-primary-foreground">
                         Category
@@ -28,8 +28,8 @@ export async function Category({ categoryData, projectID }) {
                     <span>{categoryData.categoryName}</span>
                 </p>
                 <CategoryMenu partData={await getPart(categoryData.category)} projectID={projectID} categoryID={categoryData.id} />
-
             </div>
+
             <CategoryCollapse>
                 {items}
             </CategoryCollapse>
