@@ -30,10 +30,6 @@ export function CategoryMenu({ projectID, categoryID, partData, completed, onMar
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent className="p-0">
                             <Command>
-                                <CommandInput
-                                    placeholder="Search Parts"
-                                    autoFocus={true}
-                                />
                                 <CommandList>
                                     <CommandGroup>
                                         {partData.map((data) => (

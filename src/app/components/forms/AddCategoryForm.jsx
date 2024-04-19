@@ -32,10 +32,6 @@ export function AddCategoryForm({ projectID, categoryData }) {
       </PopoverTrigger>
       <PopoverContent className="bg-card shadow-2xl">
         <Command>
-          <CommandInput
-            placeholder="Search Categories"
-            autoFocus={true}
-          />
           <CommandList>
             <CommandGroup>
               {categoryData.map((data) => (
