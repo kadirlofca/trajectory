@@ -17,7 +17,7 @@ export async function Category({ categoryData, projectID }) {
         data.partName = (await pb.collection('part').getOne(data.part)).name
         return <Part key={data.id} partData={data} categoryID={categoryData.id} projectID={projectID} />
     }))
-    
+
 
     return (
         <>

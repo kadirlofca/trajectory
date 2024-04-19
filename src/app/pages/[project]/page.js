@@ -39,7 +39,7 @@ export default async function Page({ params }) {
 
   return (
     <div>
-      <div className="flex flex-wrap text-card p-4 max-w-screen-lg mx-auto">
+      <div className="flex flex-wrap text-card px-8 py-4 max-w-screen-lg mx-auto">
 
         <Link href="/" passHref>
           <ArrowLeft className="h-6 w-6" />
@@ -59,13 +59,13 @@ export default async function Page({ params }) {
         </div>
       </div>
 
-      <div className="flex flex-col items-center mx-auto mt-3 max-w-screen-lg">
-          <AddCategoryForm
-            projectID={projectID}
-            categoryData={await getCategories()}
-          />
-          {items}
-        
+      <div className="flex flex-col items-center mx-auto mt-3 max-w-screen-lg px-8">
+        <AddCategoryForm
+          projectID={projectID}
+          categoryData={await getCategories()}
+        />
+        {items}
+
       </div>
     </div>
   );

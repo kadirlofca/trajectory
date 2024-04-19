@@ -39,7 +39,7 @@ export function Product({ productData, partID, categoryID, projectID }) {
 
     return (
         <div className="ml-8">
-            <div className={(productData.mark == "none" ? "bg-card" : productData.mark == "selected" ? "bg-blue-200" : "bg-green-200") + " flex w-full flex-col items-start justify-between rounded-md border border-gray-300 py-3 sm:flex-row sm:items-center"}>
+            <div className={(productData.mark == "none" ? "bg-card" : productData.mark == "selected" ? "bg-blue-300" : "bg-green-200") + " flex w-full flex-col items-start justify-between rounded-md border border-gray-300 py-3 sm:flex-row sm:items-center"}>
                 <p className="text-sm font-medium leading-none">
                     <span className="content-center mr-2 ml-3 rounded-lg bg-white text-black px-2 py-1 text-xs text-primary-foreground">
                         Product
