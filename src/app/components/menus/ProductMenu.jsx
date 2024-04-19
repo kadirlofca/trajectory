@@ -52,6 +52,9 @@ export function ProductMenu({ productID, partID, categoryID, projectID }) {
                     <DropdownMenuItem onClick={() => { updateProductMark(productID, partID, categoryID, projectID, "bought") }}>
                         Mark As Bought
                     </DropdownMenuItem>
+                    <DropdownMenuItem onClick={() => { updateProductMark(productID, partID, categoryID, projectID, "none") }}>
+                        Clear Mark
+                    </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={() => { deleteProduct(productID, partID, categoryID, projectID) }} className="text-red-600">
                         Delete
